@@ -1,4 +1,4 @@
-function Carroussel() {
+function Carrousel() {
     return (
         <div>
             Test
@@ -6,4 +6,4 @@ function Carroussel() {
     );
 }
 
-export default Carroussel;
+export default Carrousel;
