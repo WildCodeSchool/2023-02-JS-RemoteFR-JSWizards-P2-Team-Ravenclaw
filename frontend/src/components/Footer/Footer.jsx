@@ -1,8 +1,8 @@
 import React from "react";
 import "./Footer.scss";
-import logo1 from "../assets/logo/facebook.jpg";
-import logo2 from "../assets/logo/twitter.png";
-import logo3 from "../assets/logo/youtube.png";
+import logo1 from "../../assets/logo/facebook.jpg";
+import logo2 from "../../assets/logo/twitter.png";
+import logo3 from "../../assets/logo/youtube.png";
 
 export default function Footer() {
   return (

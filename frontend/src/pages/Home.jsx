@@ -1,7 +1,7 @@
-import Selection from "../components/Selection";
-import Footer from "../components/Footer";
-import Carrousel from "../components/Carrousel";
-import NavBar from "../components/NavBar";
+import Selection from "../components/Selection/Selection";
+import Footer from "../components/Footer/Footer";
+import Carrousel from "../components/Carrousel/Carrousel";
+import NavBar from "../components/NavBar/NavBar";
 
 import animes from "../helpers/animes.json";
 
