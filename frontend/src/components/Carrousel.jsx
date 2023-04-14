@@ -4,14 +4,17 @@ import "./carrousel.scss";
 
 const items = [
   {
+    id: 1,
     name: "Demon Slayer",
     imageSrc: "./src/assets/images-carrousel/demon-slayer.webp",
   },
   {
+    id: 2,
     name: "Dr. Stone",
     imageSrc: "./src/assets/images-carrousel/dr-stone.webp",
   },
   {
+    id: 3,
     name: "Suzume",
     imageSrc: "./src/assets/images-carrousel/suzume.webp",
   },
@@ -37,7 +40,11 @@ function Carrousel() {
         style={{ transform: `translateX(-${activeItem * 100}%)` }}
       >
         {items.map((item) => (
-          <CarrouselItem imageSrc={item.imageSrc} name={item.name} />
+          <CarrouselItem
+            key={item.id}
+            imageSrc={item.imageSrc}
+            name={item.name}
+          />
         ))}
       </div>
       <div className="carrousel-nav">
