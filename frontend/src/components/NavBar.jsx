@@ -6,12 +6,7 @@ export default function NavBar() {
   return (
     <nav>
       <img src={logo} alt="logo AlloAnime" width="350" height="60" />
-      <input
-        type="text"
-        placeholder="Search ..."
-        name="seach"
-        // onChange={handleChange}
-      />
+      <input type="text" placeholder="Search ..." name="seach" />
       <ul>
         <li>Films</li>
         <li>Series</li>
