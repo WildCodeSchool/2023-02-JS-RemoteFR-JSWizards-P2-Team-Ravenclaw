@@ -9,7 +9,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": 0,
     "no-console": "off",
     "no-restricted-syntax": [
       "error",
