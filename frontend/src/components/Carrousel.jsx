@@ -1,4 +1,5 @@
 import CarrouselItem from "./CarrouselItem";
+import "./carrousel.scss";
 
 const items = [
   {

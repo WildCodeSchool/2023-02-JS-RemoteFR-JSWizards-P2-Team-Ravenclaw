@@ -1,0 +1,15 @@
+.carrousel {
+  overflow: hidden;
+}
+
+.carrousel-inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.carrousel-item {
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 540px;
+}

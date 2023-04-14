@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function CarrouselItem({ name, imageSrc }) {
 
   return (
-    <div className="carrousel-inner">
+    <div className="carrousel-item">
       <img src={imageSrc} alt={name} />
     </div>
   );
