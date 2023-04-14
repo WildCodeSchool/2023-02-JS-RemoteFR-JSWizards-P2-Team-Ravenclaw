@@ -1,19 +1,16 @@
-import VotreSelection from "../components/VotreSelection";
+import Selection from "../components/Selection";
 import Footer from "../components/Footer";
+import Carrousel from "../components/Carrousel";
+import NavBar from "../components/NavBar";
 
 import animes from "../helpers/animes.json";
 
 export default function Home() {
   return (
     <div className="template-selection">
-      <h1> VOTRE SELECTION </h1>
-      <hr size="10" width="100%" align="center" color="#8D99AE" />
-      <div className="anime-card">
-        {animes.map((anime) => (
-          <VotreSelection key={anime.mal_id} anime={anime} />
-        ))}
-      </div>
-      <hr size="10" width="100%" align="center" color="#8D99AE" />
+      <NavBar />
+      <Carrousel />
+      <Selection animes={animes} />
       <Footer />
     </div>
   );
