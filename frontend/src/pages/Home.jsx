@@ -8,7 +8,7 @@ export default function Home() {
       <hr size="10" width="100%" align="center" color="#8D99AE" />
       <div className="anime-card">
         {animes.map((anime) => (
-          <VotreSelection anime={anime} />
+          <VotreSelection key={anime.mal_id} anime={anime} />
         ))}
       </div>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
