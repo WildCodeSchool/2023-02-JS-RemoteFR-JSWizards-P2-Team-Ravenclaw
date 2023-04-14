@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CarrouselItem from "./CarrouselItem";
 import "./carrousel.scss";
 
@@ -17,9 +18,24 @@ const items = [
 ];
 
 function Carrousel() {
+  const [activeItem, setActiveItem] = useState(0);
+
+  const updateItem = (index) => {
+    let newIndex = index;
+    if (index < 0) {
+      newIndex = 0;
+    } else if (index >= items.length) {
+      newIndex = items.length - 1;
+    }
+    setActiveItem(newIndex);
+  };
+
   return (
     <div className="carrousel">
-      <div className="carrousel-inner" style={{ transform: "translateX(-0%)" }}>
+      <div
+        className="carrousel-inner"
+        style={{ transform: `translateX(-${activeItem * 100}%)` }}
+      >
         {items.map((item) => (
           <CarrouselItem imageSrc={item.imageSrc} name={item.name} />
         ))}
