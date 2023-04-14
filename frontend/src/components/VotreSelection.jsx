@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
+import "./VotreSelection.scss";
 
-function VotreSelection({ animes }) {
+function VotreSelection({ anime }) {
   return (
     <div>
-      <img src={animes[0].images.jpg.image_url} alt={animes[0].title} />
-      <h1>{animes[0].title}</h1>
+      <img src={anime.images.jpg.image_url} alt={anime.title} />
+      <h2>{anime.title}</h2>
     </div>
   );
 }
 
 VotreSelection.propTypes = {
-  animes: PropTypes.shape({
+  anime: PropTypes.shape({
     title: PropTypes.string.isRequired,
     images: PropTypes.string.isRequired,
   }).isRequired,
