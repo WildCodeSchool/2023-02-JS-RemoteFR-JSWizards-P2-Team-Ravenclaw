@@ -1,10 +1,13 @@
+@import "../App.scss";
+
 body {
-  background-color: #2b2d42;
+  background-color: $color-darkblue;
 }
 
 h1,
 h2 {
-  color: #ef233c;
+  font-family: $font-family-heading;
+  color: $color-lightred;
 }
 
 img {

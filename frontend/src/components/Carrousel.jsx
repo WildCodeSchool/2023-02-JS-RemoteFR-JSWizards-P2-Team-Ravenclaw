@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CarrouselItem from "./CarrouselItem";
-import "./carrousel.scss";
+import "./Carrousel.scss";
 
 const items = [
   {

@@ -1,5 +1,8 @@
+@import "../App.scss";
+
 nav {
-  background-color: #8d99ae;
+  font-family: $font-family-heading;
+  background-color: $color-lightblue;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -8,7 +11,7 @@ nav {
   input {
     height: 40px;
     width: 300px;
-    background-color: #8d99ae;
+    background-color: $color-lightblue;
     border: 1px solid black;
   }
   ul {
@@ -18,7 +21,7 @@ nav {
   li {
     list-style: none;
     padding: 0 50px;
-    color: #ef233c;
+    color: $color-lightred;
     font-size: 1.1em;
   }
 }

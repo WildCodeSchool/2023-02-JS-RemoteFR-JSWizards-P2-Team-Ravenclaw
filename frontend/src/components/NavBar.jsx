@@ -10,7 +10,7 @@ export default function NavBar() {
       <ul>
         <li>Films</li>
         <li>Series</li>
-        <li>Les plus regardés</li>
+        <li>Les plus regardes</li>
       </ul>
     </nav>
   );

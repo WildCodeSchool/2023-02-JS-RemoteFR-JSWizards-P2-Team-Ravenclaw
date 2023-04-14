@@ -1,6 +1,8 @@
+@import "../App.scss";
+
 footer {
   display: flex;
-  background-color: #8d99ae;
+  background-color: $color-lightblue;
   justify-content: space-evenly;
   padding: 30px;
 }
