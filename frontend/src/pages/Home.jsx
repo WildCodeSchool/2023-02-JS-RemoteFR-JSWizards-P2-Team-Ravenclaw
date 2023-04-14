@@ -11,6 +11,7 @@ export default function Home() {
       <NavBar />
       <Carrousel />
       <Selection animes={animes} />
+      <Selection animes={animes} />
       <Footer />
     </div>
   );
