@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Days Sans Black";
+  src: url("./src/assets/fonts/Days_Sans_Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("./src/assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./src/assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+/* Fonts & letter-spacing*/
+$font-family-heading: "Days Sans Black", serif;
+$font-family-text: "Poppins-Regular", sans-serif;
+$font-family-bold: "Poppins-Bold", sans-serif;
+
+$font-size-h1: clamp(1.8rem, 8vw, 5rem);
+$font-size-h2: 1.5rem;
+$font-size-h3: 1.5rem;
+$font-size-body: clamp(0.875rem, 2vw, 1.125rem);
+$font-size-links: 1rem;
+$font-size-body-small: 0.875rem;
+$font-size-signature: 2rem;
+
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+
+$letter-spacing: 0.05em;
+$line-height: 1.5;
+
+/* Colors */
+$color-darkblue: #2b2d42;
+$color-lightblue: #8d99ae;
+$color-white: #edf2f4;
+$color-lightred: #ef233c;
+$color-darkred: #d90429;
+
+/* Borders */
+$border-radius: 8px;
+$border-width: 2px;
+
+/* Spacing */
+$gap: 16px;
+$margin: 32px;
+$padding: 8px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

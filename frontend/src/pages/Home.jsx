@@ -1,36 +1,18 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import Selection from "../components/Selection/Selection";
+import Footer from "../components/Footer/Footer";
+import Carrousel from "../components/Carrousel/Carrousel";
+import NavBar from "../components/NavBar/NavBar";
+
+import animes from "../helpers/animes.json";
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div className="template-selection">
+      <NavBar />
+      <Carrousel />
+      <Selection animes={animes} />
+      <Selection animes={animes} />
+      <Footer />
+    </div>
   );
 }

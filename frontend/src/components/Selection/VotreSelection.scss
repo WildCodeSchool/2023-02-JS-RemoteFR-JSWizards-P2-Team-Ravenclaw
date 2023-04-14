@@ -1,0 +1,24 @@
+@import "../../App.scss";
+
+body {
+  background-color: $color-darkblue;
+}
+
+h1,
+h2 {
+  font-family: $font-family-heading;
+  color: $color-lightred;
+}
+
+img {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.anime-card {
+  display: flex;
+}
+
+.template-selection {
+  overflow: hidden;
+}
