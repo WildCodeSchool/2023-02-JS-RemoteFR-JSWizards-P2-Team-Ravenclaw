@@ -1,5 +1,7 @@
-import animes from "../helpers/animes.json";
 import VotreSelection from "../components/VotreSelection";
+import Footer from "../components/Footer";
+
+import animes from "../helpers/animes.json";
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
         ))}
       </div>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
+      <Footer />
     </div>
   );
 }
