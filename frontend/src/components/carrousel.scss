@@ -3,13 +3,22 @@
 }
 
 .carrousel-inner {
-    white-space: nowrap;
-    transition: transform 0.3s;
+  white-space: nowrap;
+  transition: transform 0.3s;
 }
 
 .carrousel-item {
-    display:inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 540px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 540px;
+}
+
+.carrousel-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.carrousel-nav > button {
+  margin: 5px;
 }

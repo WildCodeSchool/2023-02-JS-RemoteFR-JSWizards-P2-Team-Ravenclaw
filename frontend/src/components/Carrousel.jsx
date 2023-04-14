@@ -20,7 +20,7 @@ const items = [
 function Carrousel() {
   const [activeItem, setActiveItem] = useState(0);
 
-  const updateItem = (index) => {
+  const handleClickUpdateItem = (index) => {
     let newIndex = index;
     if (index < 0) {
       newIndex = 0;
@@ -39,6 +39,20 @@ function Carrousel() {
         {items.map((item) => (
           <CarrouselItem imageSrc={item.imageSrc} name={item.name} />
         ))}
+      </div>
+      <div className="carrousel-nav">
+        <button
+          type="button"
+          onClick={() => handleClickUpdateItem(activeItem - 1)}
+        >
+          Prev
+        </button>
+        <button
+          type="button"
+          onClick={() => handleClickUpdateItem(activeItem + 1)}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
