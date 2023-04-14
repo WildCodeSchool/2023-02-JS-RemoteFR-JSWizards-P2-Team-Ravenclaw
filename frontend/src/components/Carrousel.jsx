@@ -1,18 +1,27 @@
-import demonSlayerSrc from "../assets/images-carrousel/demon-slayer.webp";
-import drStoneSrc from "../assets/images-carrousel/dr-stone.webp";
-import suzumeSrc from "../assets/images-carrousel/suzume.webp";
+import CarrouselItem from "./CarrouselItem";
+
+const items = [
+  {
+    name: "Demon Slayer",
+    imageSrc: "./src/assets/images-carrousel/demon-slayer.webp",
+  },
+  {
+    name: "Dr. Stone",
+    imageSrc: "./src/assets/images-carrousel/dr-stone.webp",
+  },
+  {
+    name: "Suzume",
+    imageSrc: "./src/assets/images-carrousel/suzume.webp",
+  },
+];
 
 function Carrousel() {
   return (
     <div className="carrousel">
-      <div className="carrousel-inner">
-        <img src={demonSlayerSrc} alt="Demon Slayer" />
-      </div>
-      <div className="carrousel-item">
-        <img src={drStoneSrc} alt="Dr. Stone" />
-      </div>
-      <div className="carrousel-item">
-        <img src={suzumeSrc} alt="Suzume" />
+      <div className="carrousel-inner" style={{ transform: "translateX(-0%)" }}>
+        {items.map((item) => (
+          <CarrouselItem imageSrc={item.imageSrc} name={item.name} />
+        ))}
       </div>
     </div>
   );
