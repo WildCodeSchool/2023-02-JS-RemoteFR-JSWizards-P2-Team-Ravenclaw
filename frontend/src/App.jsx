@@ -1,12 +1,11 @@
-import Home from "./pages/Home";
+import Carrousel from "./components/Carrousel";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Carrousel />
     </div>
   );
 }
