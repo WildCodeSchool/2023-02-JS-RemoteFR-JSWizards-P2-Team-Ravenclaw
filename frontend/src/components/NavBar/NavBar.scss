@@ -1,26 +1,49 @@
 @import "../../App.scss";
 
+/* VERSION MOBILE */
 nav {
   font-family: $font-family-heading;
   background-color: $color-lightblue;
   display: flex;
   justify-content: space-around;
+  padding: 20px 0;
   input {
     display: none;
   }
   .logo-desktop {
     display: none;
   }
+  ul {
+    display: none;
+  }
 }
 
+/* VERSION TABLETTE */
+@media screen and (min-width: 400px) {
+  nav {
+    .logo-mobile {
+      display: none;
+    }
+    .logo-desktop {
+      display: block;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+    }
+    li {
+      list-style: none;
+      padding: 0 10px;
+      color: $color-lightred;
+      font-size: 0.8em;
+    }
+  }
+}
+
+/* VERSION PC */
 @media screen and (min-width: 992px) {
   nav {
-    font-family: $font-family-heading;
-    background-color: $color-lightblue;
-    display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 100%;
     padding: 30px 0;
     .logo-mobile {
       display: none;
@@ -48,14 +71,8 @@ nav {
       background-color: $color-lightblue;
       border: 1px solid rgb(111, 110, 110);
     }
-    ul {
-      display: flex;
-      align-items: center;
-    }
     li {
-      list-style: none;
       padding: 0 50px;
-      color: $color-lightred;
       font-size: 1.1em;
     }
   }
