@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <nav>
       <img
-        src="./src/assets/logo/Logo_AlloAnime.png"
+        src="./src/assets/logo/Logo-AlloAnime-desktop.svg"
         alt="logo AlloAnime"
         className="logo-desktop"
         width="350"
