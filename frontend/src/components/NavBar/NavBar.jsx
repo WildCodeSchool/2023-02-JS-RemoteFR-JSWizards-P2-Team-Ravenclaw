@@ -7,8 +7,7 @@ export default function NavBar() {
       <img
         src="./src/assets/logo/Logo_AlloAnime.png"
         alt="logo AlloAnime"
-        width="350"
-        height="60"
+        className="logo"
       />
       <label>
         <input type="text" placeholder="" name="seach" />
