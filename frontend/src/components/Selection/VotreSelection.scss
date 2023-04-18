@@ -10,9 +10,21 @@ h2 {
   color: $color-lightred;
 }
 
+h2 {
+  text-align: center;
+  
+}
+hr {
+  margin-top: 2rem;
+}
+
 img {
   margin-top: 2rem;
   margin-left: 2rem;
+}
+.image-selection {
+  width: 200px;
+  height: 300px;
 }
 
 .anime-card {
@@ -21,4 +33,15 @@ img {
 
 .template-selection {
   overflow: hidden;
+  margin-top: 2rem;
 }
+
+@media screen and (max-width:768px) {
+  .template-selection {
+   
+    margin-left: 10%;
+    margin-right: 40%;
+    margin-top: 2rem;
+  }
+}
+  

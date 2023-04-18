@@ -3,7 +3,7 @@ import VotreSelection from "./VotreSelection";
 
 function Selection({ animes }) {
   return (
-    <div>
+    <div className="bloc-selection">
       <h1> VOTRE SELECTION </h1>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
       <div className="anime-card">

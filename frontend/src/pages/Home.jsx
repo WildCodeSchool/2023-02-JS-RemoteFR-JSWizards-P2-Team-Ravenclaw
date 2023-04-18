@@ -7,11 +7,13 @@ import animes from "../helpers/animes.json";
 
 export default function Home() {
   return (
-    <div className="template-selection">
+    <div>
       <NavBar />
       <Carrousel />
-      <Selection animes={animes} />
-      <Selection animes={animes} />
+      <div className="template-selection">
+        <Selection animes={animes} />
+        <Selection animes={animes} />
+      </div>
       <Footer />
     </div>
   );
