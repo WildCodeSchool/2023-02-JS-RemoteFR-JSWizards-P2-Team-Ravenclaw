@@ -22,6 +22,7 @@ const items = [
 
 function Carrousel() {
   const [activeItem, setActiveItem] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const handleClickUpdateItem = (index) => {
     let newIndex = index;
@@ -35,7 +36,9 @@ function Carrousel() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleClickUpdateItem(activeItem + 1);
+      if (!paused) {
+        handleClickUpdateItem(activeItem + 1);
+      }
     }, 3000);
 
     return () => {
@@ -46,7 +49,11 @@ function Carrousel() {
   });
 
   return (
-    <div className="carrousel">
+    <div
+      className="carrousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div
         className="carrousel-inner"
         style={{ transform: `translateX(-${activeItem * 100}%)` }}
