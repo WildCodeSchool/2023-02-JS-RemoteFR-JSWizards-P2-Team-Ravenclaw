@@ -16,6 +16,7 @@ body {
   h2{
     margin-top: 1.5rem;
     margin-left: 2rem;
+    margin-right: 2rem;
 
   }
   
@@ -38,6 +39,15 @@ body {
   }
 }
 
+.bloc-selection:nth-child(even) {
+  h2 {
+    text-align: right;
+  }}
+
+.bloc-selection:nth-child(odd) {
+  h2 {
+    text-align: left;
+  }}
 
 
 

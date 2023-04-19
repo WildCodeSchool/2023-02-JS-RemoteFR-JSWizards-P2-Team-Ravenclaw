@@ -9,10 +9,13 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <Carrousel />
       <div className="template-selection">
-        <Categorie animes={animes} />
-        <Categorie animes={animes} />
+        <Carrousel />
+        <Categorie animes={animes} titreCategorie="Action" />
+        <Categorie animes={animes} titreCategorie="Sports" />
+        <Carrousel />
+        <Categorie animes={animes} titreCategorie="Sci-Fi" />
+        <Categorie animes={animes} titreCategorie="Drama" />
       </div>
       <Footer />
     </div>
