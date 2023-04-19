@@ -1,33 +1,34 @@
 @import "../../App.scss";
 
 /* VERSION MOBILE */
-nav {
+header {
+  z-index: 100;
   font-family: $font-family-heading;
   background-color: $color-lightblue;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px 0;
+  width: 100%;
+  padding: 30px 0;
   position: relative;
-  input {
-    display: none;
-  }
+
   .logo-desktop {
     display: none;
   }
+
   button {
     border: none;
-    background: none;
     margin: 0;
     padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
   }
-  #div-burger {
-    display: flex;
-    flex-direction: column;
-    z-index: 100;
-    position: relative;
-    width: 100%;
+
+  label {
+    display: none;
   }
+
   #burger {
     width: 30px;
     height: 2px;
@@ -35,36 +36,52 @@ nav {
     display: inline-block;
     position: relative;
   }
+
   #burger::before,
   #burger::after {
     content: "";
     width: 30px;
     height: 2px;
     background: white;
-    // display: inline-block;
+    display: inline-block;
     position: absolute;
     transform-origin: center;
     transition: all 0.3s ease;
   }
+
   #burger::before {
     top: -7px;
+    right: 0px;
   }
+
   #burger::after {
     top: 7px;
+    right: 0px;
   }
+
   #burger.open {
-    background: transparent; /* la barre du milieu disparait */
+    background: transparent;
   }
-  /* celles du haut et du bas s'inclinent pour former une croix */
+
   #burger.open::before {
     transform: rotate(45deg);
     top: 0;
   }
+
   #burger.open::after {
     transform: rotate(-45deg);
     top: 0;
   }
+
+  nav {
+    border-top: 2px black;
+  }
+
   ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-lightblue;
     position: absolute;
     width: 100%;
     left: 0;
@@ -72,39 +89,62 @@ nav {
     padding: 10px 0;
     transform: scaleY(0);
     transform-origin: center top;
-    transition: all 0.3s ease;
-    background-color: $color-lightblue;
+    // transition: all 0.3s ease;
   }
+
   ul.open {
     transform: scaleY(1);
   }
+
   ul li {
-    display: block;
     padding: 10px 0;
     text-align: center;
+    list-style: none;
+    padding: 0 50px;
+    color: $color-lightred;
+    font-size: 1.1em;
   }
 }
 
 /* VERSION TABLETTE */
 @media screen and (min-width: 768px) {
-  nav {
-    .logo-mobile {
-      display: none;
-    }
-    .logo-desktop {
-      display: block;
-    }
-    ul {
-      display: flex;
-      align-items: center;
-    }
-    li {
-      display: block;
-      list-style: none;
-      padding: 0 10px;
-      color: $color-lightred;
-      font-size: 0.8em;
-    }
+  button {
+    display: none;
+  }
+
+  header .logo-mobile {
+    display: none;
+  }
+  header .logo-desktop {
+    display: block;
+  }
+
+  header ul {
+    flex-direction: row;
+    justify-content: right;
+    position: unset;
+    transform: scaleY(1);
+  }
+  header label {
+    display: initial;
+    position: relative;
+  }
+
+  label:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: url("./src/assets/logo/Search.svg") center / contain no-repeat;
+  }
+  input {
+    height: 40px;
+    width: 300px;
+    padding: 10px 30px;
+    background-color: $color-lightblue;
+    border: 1px solid rgb(111, 110, 110);
   }
 }
 
@@ -113,14 +153,15 @@ nav {
   nav {
     align-items: center;
     padding: 30px 0;
-    .logo-mobile {
+
+    header .logo-mobile {
       display: none;
     }
-    .logo-desktop {
+    header .logo-desktop {
       display: block;
     }
     label {
-      position: relative;
+      display: block;
     }
     label:before {
       content: "";
