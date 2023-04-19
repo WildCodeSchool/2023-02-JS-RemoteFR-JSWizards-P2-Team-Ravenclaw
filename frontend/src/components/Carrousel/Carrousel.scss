@@ -18,10 +18,14 @@
   .carrousel-nav {
     display: flex;
     justify-content: center;
-  }
-
-  .carrousel-nav > button {
-    margin: 5px;
+    button {
+      margin: 0.5em;
+      padding: 0.25em;
+    }
+    button.active {
+      background-color: #bada55;
+      color: white;
+    }
   }
 }
 
@@ -29,9 +33,9 @@
   .carrousel {
     display: initial;
     .carrousel-item {
-    img {
-      width: 100%;
-      max-width: 960px;
+      img {
+        width: 100%;
+        max-width: 960px;
       }
     }
   }

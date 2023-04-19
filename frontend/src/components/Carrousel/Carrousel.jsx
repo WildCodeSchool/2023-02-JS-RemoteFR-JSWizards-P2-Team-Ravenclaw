@@ -26,9 +26,9 @@ function Carrousel() {
   const handleClickUpdateItem = (index) => {
     let newIndex = index;
     if (index < 0) {
-      newIndex = 0;
-    } else if (index >= items.length) {
       newIndex = items.length - 1;
+    } else if (index >= items.length) {
+      newIndex = 0;
     }
     setActiveItem(newIndex);
   };
@@ -54,6 +54,16 @@ function Carrousel() {
         >
           Prev
         </button>
+        {items.map((item, index) => (
+          <button
+            key={item.id}
+            type="button"
+            className={`${index === activeItem ? "active" : ""}`}
+            onClick={() => handleClickUpdateItem(index)}
+          >
+            {item.id}
+          </button>
+        ))}
         <button
           type="button"
           onClick={() => handleClickUpdateItem(activeItem + 1)}
