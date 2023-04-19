@@ -1,4 +1,4 @@
-import Selection from "../components/Selection/Selection";
+import Categorie from "../components/Categorie/Categorie";
 import Footer from "../components/Footer/Footer";
 import Carrousel from "../components/Carrousel/Carrousel";
 import NavBar from "../components/NavBar/NavBar";
@@ -11,8 +11,8 @@ export default function Home() {
       <NavBar />
       <Carrousel />
       <div className="template-selection">
-        <Selection animes={animes} />
-        <Selection animes={animes} />
+        <Categorie animes={animes} />
+        <Categorie animes={animes} />
       </div>
       <Footer />
     </div>

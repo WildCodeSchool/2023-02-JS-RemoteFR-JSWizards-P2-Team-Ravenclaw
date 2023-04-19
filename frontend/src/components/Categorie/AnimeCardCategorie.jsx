@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./VotreSelection.scss";
 
-function VotreSelection({ anime }) {
+function AnimeCardCategorie({ anime }) {
   return (
     <div>
       <img
@@ -14,11 +14,11 @@ function VotreSelection({ anime }) {
   );
 }
 
-VotreSelection.propTypes = {
+AnimeCardCategorie.propTypes = {
   anime: PropTypes.shape({
     title: PropTypes.string.isRequired,
     images: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default VotreSelection;
+export default AnimeCardCategorie;
