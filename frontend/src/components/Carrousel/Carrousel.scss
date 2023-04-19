@@ -9,7 +9,7 @@
   }
 
   .carrousel-item {
-    padding: 1em;
+    padding: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +56,23 @@
     .carrousel-item {
       img {
         width: 100%;
-        max-width: 960px;
+        max-width: 736px;
+      }
+    }
+    .carrousel-nav {
+      button.next-bt {
+        background: url("../../assets/arrow-next.png") center / contain
+          no-repeat;
+        position: relative;
+        bottom: 245px;
+        left: 300px;
+      }
+      button.prev-bt {
+        background: url("../../assets/arrow-prev.png") center / contain
+          no-repeat;
+        position: relative;
+        bottom: 245px;
+        right: 300px;
       }
     }
   }
@@ -66,5 +82,21 @@
 @media screen and (min-width: 1024px) {
   .carrousel {
     display: initial;
+    .carrousel-item {
+      img {
+        width: 100%;
+        max-width: 992px;
+      }
+    }
+    .carrousel-nav {
+      button.next-bt {
+        bottom: 318px;
+        left: 428px;
+      }
+      button.prev-bt {
+        bottom: 318px;
+        right: 428px;
+      }
+    }
   }
 }
