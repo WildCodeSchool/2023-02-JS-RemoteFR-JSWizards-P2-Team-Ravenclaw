@@ -6,6 +6,13 @@ footer {
   background-color: $color-lightblue;
   justify-content: space-evenly;
   padding: 30px;
+
+  .logo1,logo2,logo3 {
+    display: none;
+  }
+  .p{
+    display: contents;
+  }
 }
 /* ----- Tablette---- */
 @media screen and (min-width: 691px) {
@@ -20,6 +27,9 @@ footer {
     logo3 {
       display: none;
     }
+.p {
+  display: contents;
+}
   }
 }
 /*---- PC----*/
@@ -34,6 +44,9 @@ footer {
     logo2,
     logo3 {
       display: none;
+    }
+    .p {
+      display: contents;
     }
   }
 }
