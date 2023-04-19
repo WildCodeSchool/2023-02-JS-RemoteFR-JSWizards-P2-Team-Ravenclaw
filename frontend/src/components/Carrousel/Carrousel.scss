@@ -1,26 +1,44 @@
 @import "../../App.scss";
 
 .carrousel {
+  display: none;
   overflow: hidden;
+  .carrousel-inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+  }
+
+  .carrousel-item {
+    padding: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carrousel-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carrousel-nav > button {
+    margin: 5px;
+  }
 }
 
-.carrousel-inner {
-  white-space: nowrap;
-  transition: transform 0.3s;
+@media screen and (min-width: 768px) {
+  .carrousel {
+    display: initial;
+    .carrousel-item {
+    img {
+      width: 100%;
+      max-width: 960px;
+      }
+    }
+  }
 }
 
-.carrousel-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 540px;
-}
-
-.carrousel-nav {
-  display: flex;
-  justify-content: center;
-}
-
-.carrousel-nav > button {
-  margin: 5px;
+@media screen and (min-width: 1024px) {
+  .carrousel {
+    display: initial;
+  }
 }
