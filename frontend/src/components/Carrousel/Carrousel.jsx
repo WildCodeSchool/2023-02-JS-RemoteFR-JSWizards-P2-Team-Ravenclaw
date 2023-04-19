@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CarrouselItem from "./CarrouselItem";
 import "./Carrousel.scss";
 
@@ -32,6 +32,18 @@ function Carrousel() {
     }
     setActiveItem(newIndex);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleClickUpdateItem(activeItem + 1);
+    }, 3000);
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
 
   return (
     <div className="carrousel">
