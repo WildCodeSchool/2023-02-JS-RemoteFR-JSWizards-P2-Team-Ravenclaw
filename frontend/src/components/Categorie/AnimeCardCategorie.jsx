@@ -9,7 +9,7 @@ function AnimeCardCategorie({ anime }) {
         src={anime.images.jpg.image_url}
         alt={anime.title}
       />
-      <h2>{anime.title}</h2>
+      <h3>{anime.title}</h3>
     </div>
   );
 }

@@ -1,35 +1,45 @@
 @import "../../App.scss";
 
+
 body {
   background-color: $color-darkblue;
 }
 
-h1,
-h2 {
-  font-family: $font-family-heading;
-  color: $color-lightred;
-}
 
-h2 {
-  text-align: center;
+.bloc-selection {
+  h2,
+  h3 {
+    font-family: $font-family-heading;
+    color: $color-lightred;
+  }
+
+  h2{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+
+  }
   
-}
-hr {
-  margin-top: 2rem;
+  img {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .anime-card {
+    display: flex;
+    h3 {
+      text-align: center;
+  
+    }
+
+    .image-selection {
+      width: 150px;
+      height: 200px;
+    }
+  }
 }
 
-img {
-  margin-top: 2rem;
-  margin-left: 2rem;
-}
-.image-selection {
-  width: 200px;
-  height: 300px;
-}
 
-.anime-card {
-  display: flex;
-}
+
 
 .template-selection {
   overflow: hidden;
@@ -38,10 +48,13 @@ img {
 
 @media screen and (min-width:768px) {
   .template-selection {
-   
+    
     margin-left: 10%;
-    margin-right: 40%;
+    margin-right: 30%;
     margin-top: 2rem;
   }
 }
-  
+hr {
+  margin-top: 1rem;
+}
+
