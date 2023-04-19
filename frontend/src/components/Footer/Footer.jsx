@@ -10,6 +10,11 @@ export default function Footer() {
       <img src={logo1} alt="logo facebook" width="50" height="50" />
       <img src={logo2} alt="logo twitter" width="50" height="50" />
       <img src={logo3} alt="logo youtube" width="50" height="50" />
+      <div>
+        <p>About Us</p>
+        <p>Terms of Us</p>
+        <p>Privacy policy</p>
+      </div>
     </footer>
   );
 }

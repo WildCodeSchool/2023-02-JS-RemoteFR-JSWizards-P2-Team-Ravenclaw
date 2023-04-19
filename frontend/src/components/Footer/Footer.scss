@@ -1,8 +1,39 @@
 @import "../../App.scss";
 
+/* ---- First Mobile ---*/
 footer {
   display: flex;
   background-color: $color-lightblue;
   justify-content: space-evenly;
   padding: 30px;
+}
+/* ----- Tablette---- */
+@media screen and (min-width: 691px) {
+  footer {
+    display: flex;
+    background-color: $color-lightblue;
+    justify-content: space-evenly;
+    padding: 30px;
+
+    .logo1,
+    logo2,
+    logo3 {
+      display: none;
+    }
+  }
+}
+/*---- PC----*/
+@media screen and (min-width: 992px) {
+  footer {
+    display: flex;
+    background-color: $color-lightblue;
+    justify-content: space-evenly;
+    padding: 30px;
+
+    .logo1,
+    logo2,
+    logo3 {
+      display: none;
+    }
+  }
 }
