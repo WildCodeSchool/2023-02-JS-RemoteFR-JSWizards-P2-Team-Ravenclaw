@@ -7,46 +7,24 @@ footer {
   justify-content: space-evenly;
   padding: 30px;
 
-  .logo1,logo2,logo3 {
+  .logo-facebook,
+  .logo-twitter,
+  .logo-youtube {
     display: none;
   }
-  .p{
+  .p {
     display: contents;
   }
 }
 /* ----- Tablette---- */
-@media screen and (min-width: 691px) {
+@media screen and (min-width: 768px) {
   footer {
-    display: flex;
-    background-color: $color-lightblue;
-    justify-content: space-evenly;
-    padding: 30px;
-
-    .logo1,
-    logo2,
-    logo3 {
-      display: none;
+    .logo-facebook,
+    .logo-twitter,
+    .logo-youtube {
+      display: block;
     }
-.p {
-  display: contents;
-}
   }
 }
 /*---- PC----*/
-@media screen and (min-width: 992px) {
-  footer {
-    display: flex;
-    background-color: $color-lightblue;
-    justify-content: space-evenly;
-    padding: 30px;
 
-    .logo1,
-    logo2,
-    logo3 {
-      display: none;
-    }
-    .p {
-      display: contents;
-    }
-  }
-}
