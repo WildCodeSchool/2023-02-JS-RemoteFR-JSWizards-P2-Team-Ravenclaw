@@ -24,7 +24,7 @@ function Carrousel() {
   const [activeItem, setActiveItem] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const handleClickUpdateItem = (index) => {
+  const updateItem = (index) => {
     let newIndex = index;
     if (index < 0) {
       newIndex = items.length - 1;
@@ -37,9 +37,9 @@ function Carrousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused) {
-        handleClickUpdateItem(activeItem + 1);
+        updateItem(activeItem + 1);
       }
-    }, 3000);
+    }, 2000);
 
     return () => {
       if (interval) {
@@ -69,25 +69,27 @@ function Carrousel() {
       <div className="carrousel-nav">
         <button
           type="button"
-          onClick={() => handleClickUpdateItem(activeItem - 1)}
+          className="prev-bt"
+          onClick={() => updateItem(activeItem - 1)}
         >
-          Prev
+          &nbsp;&nbsp;
         </button>
         {items.map((item, index) => (
           <button
             key={item.id}
             type="button"
-            className={`${index === activeItem ? "active" : ""}`}
-            onClick={() => handleClickUpdateItem(index)}
+            className={`item-bt ${index === activeItem ? "active" : ""}`}
+            onClick={() => updateItem(index)}
           >
-            {item.id}
+            •
           </button>
         ))}
         <button
           type="button"
-          onClick={() => handleClickUpdateItem(activeItem + 1)}
+          className="next-bt"
+          onClick={() => updateItem(activeItem + 1)}
         >
-          Next
+          &nbsp;&nbsp;
         </button>
       </div>
     </div>
