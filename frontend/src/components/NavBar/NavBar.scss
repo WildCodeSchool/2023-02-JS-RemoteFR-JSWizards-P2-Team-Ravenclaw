@@ -6,10 +6,10 @@ header {
   font-family: $font-family-heading;
   background-color: $color-lightblue;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 60px;
   position: relative;
 
   .logo-desktop {
@@ -89,7 +89,9 @@ header {
     padding: 10px 0;
     transform: scaleY(0);
     transform-origin: center top;
-    // transition: all 0.3s ease;
+    .search {
+      display: none;
+    }
   }
 
   ul.open {
@@ -117,6 +119,24 @@ header {
   }
   header .logo-desktop {
     display: block;
+    width: 200px;
+  }
+
+  header {
+    padding: 30px 0;
+    justify-content: space-around;
+  }
+
+  nav {
+    ul {
+      background: url("./src/assets/logo/Search.svg") left / contain no-repeat;
+      padding-left: 2em;
+      height: 1em;
+      li {
+        font-size: 0.7em;
+        padding: 0 1em;
+      }
+    }
   }
 
   header ul {
@@ -125,9 +145,24 @@ header {
     position: unset;
     transform: scaleY(1);
   }
-  header label {
-    display: initial;
-    position: relative;
+}
+
+/* VERSION PC */
+@media screen and (min-width: 1024px) {
+  header {
+    justify-content: space-around;
+    nav {
+      align-items: center;
+      padding: 30px 0;
+      ul {
+        background: initial;
+        li {
+          display: block;
+          padding: 0 1em;
+          font-size: 0.8rem;
+        }
+      }
+    }
   }
 
   label:before {
@@ -139,6 +174,7 @@ header {
     width: 20px;
     background: url("./src/assets/logo/Search.svg") center / contain no-repeat;
   }
+
   input {
     height: 40px;
     width: 300px;
@@ -146,44 +182,21 @@ header {
     background-color: $color-lightblue;
     border: 1px solid rgb(111, 110, 110);
   }
-}
 
-/* VERSION PC */
-@media screen and (min-width: 1024px) {
-  nav {
-    align-items: center;
-    padding: 30px 0;
+  header .logo-mobile {
+    display: none;
+  }
+  header .logo-desktop {
+    display: block;
+    width: 300px;
+  }
 
-    header .logo-mobile {
-      display: none;
-    }
-    header .logo-desktop {
-      display: block;
-    }
-    label {
-      display: block;
-    }
-    label:before {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 20px;
-      background: url("./src/assets/logo/Search.svg") center / contain no-repeat;
-    }
-    input {
-      display: block;
-      height: 40px;
-      width: 300px;
-      padding: 10px 30px;
-      background-color: $color-lightblue;
-      border: 1px solid rgb(111, 110, 110);
-    }
-    li {
-      display: block;
-      padding: 0 50px;
-      font-size: 1.1em;
-    }
+  header label {
+    display: initial;
+    position: relative;
+  }
+
+  input {
+    display: block;
   }
 }
