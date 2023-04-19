@@ -1,26 +1,102 @@
 @import "../../App.scss";
 
 .carrousel {
+  display: none;
   overflow: hidden;
+  .carrousel-inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+  }
+
+  .carrousel-item {
+    padding: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carrousel-nav {
+    display: flex;
+    justify-content: center;
+    button {
+      margin: 0 4px;
+      font-size: xx-large;
+      font-weight: bolder;
+      background-color: transparent;
+      color: $color-lightred;
+      border: none;
+    }
+    button.item-bt {
+      position: relative;
+      bottom: 4rem;
+      color: $color-lightblue;
+    }
+    button.active {
+      color: $color-lightred;
+    }
+    button.next-bt {
+      background: url("../../assets/arrow-next.png") center / contain no-repeat;
+      position: relative;
+      bottom: 300px;
+      left: 400px;
+    }
+    button.prev-bt {
+      background: url("../../assets/arrow-prev.png") center / contain no-repeat;
+      position: relative;
+      bottom: 300px;
+      right: 400px;
+    }
+  }
 }
 
-.carrousel-inner {
-  white-space: nowrap;
-  transition: transform 0.3s;
+// Tablette
+@media screen and (min-width: 768px) {
+  .carrousel {
+    display: initial;
+    .carrousel-item {
+      img {
+        width: 100%;
+        max-width: 736px;
+      }
+    }
+    .carrousel-nav {
+      button.next-bt {
+        background: url("../../assets/arrow-next.png") center / contain
+          no-repeat;
+        position: relative;
+        bottom: 245px;
+        left: 270px;
+      }
+      button.prev-bt {
+        background: url("../../assets/arrow-prev.png") center / contain
+          no-repeat;
+        position: relative;
+        bottom: 245px;
+        right: 270px;
+      }
+    }
+  }
 }
 
-.carrousel-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 540px;
-}
-
-.carrousel-nav {
-  display: flex;
-  justify-content: center;
-}
-
-.carrousel-nav > button {
-  margin: 5px;
+// Desktop
+@media screen and (min-width: 1024px) {
+  .carrousel {
+    display: initial;
+    .carrousel-item {
+      img {
+        width: 100%;
+        max-width: 992px;
+      }
+    }
+    .carrousel-nav {
+      button.next-bt {
+        bottom: 318px;
+        left: 400px;
+      }
+      button.prev-bt {
+        bottom: 318px;
+        right: 400px;
+      }
+    }
+  }
 }
