@@ -18,6 +18,21 @@ const items = [
     name: "Suzume",
     imageSrc: "./src/assets/images-carrousel/suzume.webp",
   },
+  {
+    id: 4,
+    name: "Bofuri",
+    imageSrc: "./src/assets/images-carrousel/suzume.webp",
+  },
+  {
+    id: 5,
+    name: "Skip & Loafer",
+    imageSrc: "./src/assets/images-carrousel/skip-loafer.webp",
+  },
+  {
+    id: 6,
+    name: "Cheat Skill",
+    imageSrc: "./src/assets/images-carrousel/cheat-skill.webp",
+  },
 ];
 
 function Carrousel() {
