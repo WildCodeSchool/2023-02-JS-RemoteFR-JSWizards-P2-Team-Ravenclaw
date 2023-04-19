@@ -17,7 +17,11 @@ function AnimeCardCategorie({ anime }) {
 AnimeCardCategorie.propTypes = {
   anime: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    images: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      jpg: PropTypes.shape({
+        image_url: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
   }).isRequired,
 };
 
