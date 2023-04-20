@@ -35,13 +35,13 @@ body {
   }
 }
 
-.bloc-selection:nth-child(even) {
+.bloc-selection:nth-child(3), .bloc-selection:nth-child(6) {
   h2 {
     text-align: right;
   }
 }
 
-.bloc-selection:nth-child(odd) {
+.bloc-selection:nth-child(2), .bloc-selection:nth-child(5) {
   h2 {
     text-align: left;
   }
