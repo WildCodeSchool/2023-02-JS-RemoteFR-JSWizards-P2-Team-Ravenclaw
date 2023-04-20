@@ -1,10 +1,8 @@
 @import "../../App.scss";
 
-
 body {
   background-color: $color-darkblue;
 }
-
 
 .bloc-selection {
   h2,
@@ -13,23 +11,21 @@ body {
     color: $color-lightred;
   }
 
-  h2{
+  h2 {
     margin-top: 1.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
-
   }
-  
+
   img {
     margin-top: 2rem;
     margin-left: 2rem;
   }
-  
+
   .anime-card {
     display: flex;
     h3 {
       text-align: center;
-  
     }
 
     .image-selection {
@@ -42,23 +38,22 @@ body {
 .bloc-selection:nth-child(even) {
   h2 {
     text-align: right;
-  }}
+  }
+}
 
 .bloc-selection:nth-child(odd) {
   h2 {
     text-align: left;
-  }}
-
-
+  }
+}
 
 .template-selection {
   overflow: hidden;
   margin-top: 2rem;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .template-selection {
-    
     margin-left: 10%;
     margin-right: 30%;
     margin-top: 2rem;
@@ -67,4 +62,3 @@ body {
 hr {
   margin-top: 1rem;
 }
-
