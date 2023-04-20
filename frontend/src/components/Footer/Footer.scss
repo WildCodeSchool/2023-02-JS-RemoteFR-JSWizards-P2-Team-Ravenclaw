@@ -1,8 +1,30 @@
 @import "../../App.scss";
 
+/* ---- First Mobile ---*/
 footer {
   display: flex;
   background-color: $color-lightblue;
   justify-content: space-evenly;
   padding: 30px;
+
+  .logo-facebook,
+  .logo-twitter,
+  .logo-youtube {
+    display: none;
+  }
+  .p {
+    display: contents;
+  }
 }
+/* ----- Tablette---- */
+@media screen and (min-width: 768px) {
+  footer {
+    .logo-facebook,
+    .logo-twitter,
+    .logo-youtube {
+      display: block;
+    }
+  }
+}
+/*---- PC----*/
+
