@@ -1,28 +1,25 @@
 import React from "react";
 import "./Footer.scss";
-import logoFacebook from "../../assets/logo/Facebook.svg";
-import logoTwitter from "../../assets/logo/Twitter.svg";
-import logoYoutube from "../../assets/logo/YouTube.svg";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <img
-        src={logoFacebook}
+        src="./src/assets/logo/Facebook.svg"
         className="logo-facebook"
         alt="logo facebook"
         width="50"
         height="50"
       />
       <img
-        src={logoTwitter}
+        src="./src/assets/logo/Twitter.svg"
         className="logo-twitter"
         alt="logo twitter"
         width="50"
         height="50"
       />
       <img
-        src={logoYoutube}
+        src="./src/assets/logo/YouTube.svg"
         className="logo-youtube"
         alt="logo youtube"
         width="50"
