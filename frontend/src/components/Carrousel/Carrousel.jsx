@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CarrouselItem from "./CarrouselItem";
 import "./Carrousel.scss";
 
@@ -18,23 +18,57 @@ const items = [
     name: "Suzume",
     imageSrc: "./src/assets/images-carrousel/suzume.webp",
   },
+  {
+    id: 4,
+    name: "Bofuri",
+    imageSrc: "./src/assets/images-carrousel/suzume.webp",
+  },
+  {
+    id: 5,
+    name: "Skip & Loafer",
+    imageSrc: "./src/assets/images-carrousel/skip-loafer.webp",
+  },
+  {
+    id: 6,
+    name: "Cheat Skill",
+    imageSrc: "./src/assets/images-carrousel/cheat-skill.webp",
+  },
 ];
 
 function Carrousel() {
   const [activeItem, setActiveItem] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const handleClickUpdateItem = (index) => {
+  const updateItem = (index) => {
     let newIndex = index;
     if (index < 0) {
-      newIndex = 0;
-    } else if (index >= items.length) {
       newIndex = items.length - 1;
+    } else if (index >= items.length) {
+      newIndex = 0;
     }
     setActiveItem(newIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) {
+        updateItem(activeItem + 1);
+      }
+    }, 2000);
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
+
   return (
-    <div className="carrousel">
+    <div
+      className="carrousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div
         className="carrousel-inner"
         style={{ transform: `translateX(-${activeItem * 100}%)` }}
@@ -50,15 +84,27 @@ function Carrousel() {
       <div className="carrousel-nav">
         <button
           type="button"
-          onClick={() => handleClickUpdateItem(activeItem - 1)}
+          className="prev-bt"
+          onClick={() => updateItem(activeItem - 1)}
         >
-          Prev
+          &nbsp;&nbsp;
         </button>
+        {items.map((item, index) => (
+          <button
+            key={item.id}
+            type="button"
+            className={`item-bt ${index === activeItem ? "active" : ""}`}
+            onClick={() => updateItem(index)}
+          >
+            •
+          </button>
+        ))}
         <button
           type="button"
-          onClick={() => handleClickUpdateItem(activeItem + 1)}
+          className="next-bt"
+          onClick={() => updateItem(activeItem + 1)}
         >
-          Next
+          &nbsp;&nbsp;
         </button>
       </div>
     </div>
