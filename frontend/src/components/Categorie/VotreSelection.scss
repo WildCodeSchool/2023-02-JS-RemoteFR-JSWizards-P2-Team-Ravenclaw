@@ -54,9 +54,8 @@ body {
 
 @media screen and (min-width: 768px) {
   .template-selection {
-    margin-left: 10%;
-    margin-right: 30%;
-    margin-top: 2rem;
+    max-width: 1280px;
+    margin: 1rem auto;
   }
 }
 hr {
