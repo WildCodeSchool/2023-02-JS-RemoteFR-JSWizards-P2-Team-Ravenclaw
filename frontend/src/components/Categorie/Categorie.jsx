@@ -19,6 +19,7 @@ function Categorie({ animes, titreCategorie }) {
 
   return (
     <div className="bloc-selection">
+      <hr size="10" width="100%" align="center" color="#8D99AE" />
       <h2>{titreCategorie}</h2>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
       <div className="dad-anime-card">
@@ -26,7 +27,6 @@ function Categorie({ animes, titreCategorie }) {
           <AnimeCardCategorie key={anime.mal_id} anime={anime} />
         ))}
       </div>
-      <hr size="10" width="100%" align="center" color="#8D99AE" />
     </div>
   );
 }
