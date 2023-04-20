@@ -15,16 +15,15 @@ footer {
   .p {
     display: block;
   }
-  
 
-/* ----- Tablette---- */
-@media screen and (min-width: 768px) {
-  footer {
-    .logo-facebook,
-    .logo-twitter,
-    .logo-youtube {
-      display: block;
+  /* ----- Tablette---- */
+  @media screen and (min-width: 768px) {
+    footer {
+      .logo-facebook,
+      .logo-twitter,
+      .logo-youtube {
+        display: block;
+      }
     }
   }
-}
 }
