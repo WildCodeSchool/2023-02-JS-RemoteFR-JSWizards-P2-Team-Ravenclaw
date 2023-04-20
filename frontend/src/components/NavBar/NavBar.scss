@@ -80,15 +80,14 @@ header {
   ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: $color-lightblue;
+    background: $color-darkblue;
     position: absolute;
     width: 100%;
     left: 0;
     top: 100%;
-    padding: 10px 0;
     transform: scaleY(0);
     transform-origin: center top;
+    align-items: center;
     .search {
       display: none;
     }
@@ -96,13 +95,16 @@ header {
 
   ul.open {
     transform: scaleY(1);
+    align-items: flex-start;
+    li {
+      padding: 50px 100px;
+    }
   }
 
   ul li {
     padding: 10px 0;
     text-align: center;
     list-style: none;
-    padding: 0 50px;
     color: $color-lightred;
     font-size: 1.1em;
   }
@@ -125,13 +127,20 @@ header {
   header {
     padding: 30px 0;
     justify-content: space-around;
+    ul.open {
+      padding: 0px 2em;
+      align-items: center;
+      li {
+        padding: 0 2em;
+      }
+    }
   }
 
   nav {
     ul {
       background: url("./src/assets/logo/Search.svg") left / contain no-repeat;
       padding-left: 2em;
-      height: 1em;
+      height: 1.2em;
       li {
         font-size: 0.7em;
         padding: 0 1em;
