@@ -9,39 +9,45 @@ body {
   h3 {
     font-family: $font-family-heading;
     color: $color-lightred;
+    margin: 1rem 0;
   }
 
-  h2 {
-    margin-top: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  img {
-    margin-top: 2rem;
-    margin-left: 2rem;
-  }
-
-  .anime-card {
+  .dad-anime-card {
     display: flex;
+    justify-content: left;
     h3 {
-      text-align: center;
+      margin-bottom: 0;
+      height: 48px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
-    .image-selection {
-      width: 150px;
-      height: 200px;
+    .anime-card {
+      padding: 30px;
+      width: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        text-align: center;
+      }
+      .image-selection {
+        width: 150px;
+        height: 200px;
+      }
     }
   }
 }
 
-.bloc-selection:nth-child(3), .bloc-selection:nth-child(6) {
+.bloc-selection:nth-child(3),
+.bloc-selection:nth-child(6) {
   h2 {
     text-align: right;
   }
 }
 
-.bloc-selection:nth-child(2), .bloc-selection:nth-child(5) {
+.bloc-selection:nth-child(2),
+.bloc-selection:nth-child(5) {
   h2 {
     text-align: left;
   }
@@ -57,7 +63,4 @@ body {
     max-width: 1280px;
     margin: 1rem auto;
   }
-}
-hr {
-  margin-top: 1rem;
 }

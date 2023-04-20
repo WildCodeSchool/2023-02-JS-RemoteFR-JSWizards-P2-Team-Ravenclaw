@@ -21,7 +21,7 @@ function Categorie({ animes, titreCategorie }) {
     <div className="bloc-selection">
       <h2>{titreCategorie}</h2>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
-      <div className="anime-card">
+      <div className="dad-anime-card">
         {animeCategorie.map((anime) => (
           <AnimeCardCategorie anime={anime} />
         ))}
