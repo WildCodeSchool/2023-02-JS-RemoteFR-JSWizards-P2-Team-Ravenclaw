@@ -4,7 +4,11 @@ import "./VotreSelection.scss";
 function VotreSelection({ anime }) {
   return (
     <div>
-      <img src={anime.images.jpg.image_url} alt={anime.title} />
+      <img
+        className="image"
+        src={anime.images.jpg.image_url}
+        alt={anime.title}
+      />
       <h2>{anime.title}</h2>
     </div>
   );

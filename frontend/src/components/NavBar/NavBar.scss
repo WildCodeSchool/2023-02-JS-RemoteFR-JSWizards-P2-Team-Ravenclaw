@@ -1,15 +1,168 @@
 @import "../../App.scss";
 
-nav {
+/* VERSION MOBILE */
+header {
+  z-index: 100;
   font-family: $font-family-heading;
   background-color: $color-lightblue;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 60px;
+  position: relative;
+
+  .logo-desktop {
+    display: none;
+  }
+
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+  }
+
   label {
+    display: none;
+  }
+
+  #burger {
+    width: 30px;
+    height: 2px;
+    background: white;
+    display: inline-block;
     position: relative;
+  }
+
+  #burger::before,
+  #burger::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: white;
+    display: inline-block;
+    position: absolute;
+    transform-origin: center;
+    transition: all 0.3s ease;
+  }
+
+  #burger::before {
+    top: -7px;
+    right: 0px;
+  }
+
+  #burger::after {
+    top: 7px;
+    right: 0px;
+  }
+
+  #burger.open {
+    background: transparent;
+  }
+
+  #burger.open::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  #burger.open::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  nav {
+    border-top: 2px black;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-lightblue;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    padding: 10px 0;
+    transform: scaleY(0);
+    transform-origin: center top;
+    .search {
+      display: none;
+    }
+  }
+
+  ul.open {
+    transform: scaleY(1);
+  }
+
+  ul li {
+    padding: 10px 0;
+    text-align: center;
+    list-style: none;
+    padding: 0 50px;
+    color: $color-lightred;
+    font-size: 1.1em;
+  }
+}
+
+/* VERSION TABLETTE */
+@media screen and (min-width: 768px) {
+  button {
+    display: none;
+  }
+
+  header .logo-mobile {
+    display: none;
+  }
+  header .logo-desktop {
+    display: block;
+    width: 200px;
+  }
+
+  header {
+    padding: 30px 0;
+    justify-content: space-around;
+  }
+
+  nav {
+    ul {
+      background: url("./src/assets/logo/Search.svg") left / contain no-repeat;
+      padding-left: 2em;
+      height: 1em;
+      li {
+        font-size: 0.7em;
+        padding: 0 1em;
+      }
+    }
+  }
+
+  header ul {
+    flex-direction: row;
+    justify-content: right;
+    position: unset;
+    transform: scaleY(1);
+  }
+}
+
+/* VERSION PC */
+@media screen and (min-width: 1024px) {
+  header {
+    justify-content: space-around;
+    nav {
+      align-items: center;
+      padding: 30px 0;
+      ul {
+        background: initial;
+        li {
+          display: block;
+          padding: 0 1em;
+          font-size: 0.8rem;
+        }
+      }
+    }
   }
 
   label:before {
@@ -21,6 +174,7 @@ nav {
     width: 20px;
     background: url("./src/assets/logo/Search.svg") center / contain no-repeat;
   }
+
   input {
     height: 40px;
     width: 300px;
@@ -29,14 +183,20 @@ nav {
     border: 1px solid rgb(111, 110, 110);
   }
 
-  ul {
-    display: flex;
-    align-items: center;
+  header .logo-mobile {
+    display: none;
   }
-  li {
-    list-style: none;
-    padding: 0 50px;
-    color: $color-lightred;
-    font-size: 1.1em;
+  header .logo-desktop {
+    display: block;
+    width: 300px;
+  }
+
+  header label {
+    display: initial;
+    position: relative;
+  }
+
+  input {
+    display: block;
   }
 }
