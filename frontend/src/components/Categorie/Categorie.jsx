@@ -23,7 +23,7 @@ function Categorie({ animes, titreCategorie }) {
       <hr size="10" width="100%" align="center" color="#8D99AE" />
       <div className="dad-anime-card">
         {animeCategorie.map((anime) => (
-          <AnimeCardCategorie anime={anime} />
+          <AnimeCardCategorie key={anime.mal_id} anime={anime} />
         ))}
       </div>
       <hr size="10" width="100%" align="center" color="#8D99AE" />
@@ -32,7 +32,7 @@ function Categorie({ animes, titreCategorie }) {
 }
 
 Categorie.propTypes = {
-  animes: PropTypes.arrayOf(PropTypes.shape.isRequired).isRequired,
+  animes: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   titreCategorie: PropTypes.string.isRequired,
 };
 
