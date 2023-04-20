@@ -15,19 +15,37 @@ body {
   .dad-anime-card {
     display: flex;
     justify-content: left;
-    h3 {
+    .overflow {
+      width: 150px;
       margin-bottom: 0;
-      height: 48px;
+      position: relative;
+      --lh: 1.4rem;
+      line-height: var(--lh);
+      --max-lines: 2;
+      max-height: calc(var(--lh) * var(--max-lines));
       overflow: hidden;
-      text-overflow: ellipsis;
+      padding-right: 0;
+    }
+    .overflow::before {
+      position: absolute;
+      content: " *";
+      bottom: 3px;
+      right: 0;
+    }
+    .overflow::after {
+      position: absolute;
+      content: "";
+      right: 0; /* note: not using bottom */
+      width: 0.6rem;
+      height: 0.7rem;
+      background: $color-darkblue;
     }
     .anime-card {
       padding: 30px 20px;
       width: 190px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: start;
       h3 {
         text-align: center;
       }
@@ -60,7 +78,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .template-selection {
-    max-width: 1280px;
+    max-width: 1330px;
     margin: 1rem auto;
   }
 }
