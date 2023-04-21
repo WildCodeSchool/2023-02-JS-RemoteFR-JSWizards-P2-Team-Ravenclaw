@@ -16,6 +16,7 @@ export default function Home() {
         <Carrousel />
         <Categorie animes={animes} titreCategorie="Sci-Fi" />
         <Categorie animes={animes} titreCategorie="Drama" />
+        <Carrousel />
       </div>
       <Footer />
     </div>
