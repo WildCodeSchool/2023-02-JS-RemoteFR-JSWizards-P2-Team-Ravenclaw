@@ -1,5 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 // import React from "react";
+import PropTypes from "prop-types";
 import "./NavBar.scss";
 
 export default function NavBar({ recherche, setRecherche }) {
@@ -13,13 +14,13 @@ export default function NavBar({ recherche, setRecherche }) {
   function onChange(e) {
     // console.log(e.target.value); /** Cible dans l'input le target puis la valeur */
     setRecherche(e.target.value);
-    console.log(recherche);
+    // console.log(recherche);
   }
 
   function onSearch(e) {
     e.preventDefault(); /** Evite le rechargement de la page */
 
-    console.log(recherche);
+    // console.log(recherche);
   }
 
   return (
@@ -62,3 +63,8 @@ export default function NavBar({ recherche, setRecherche }) {
     </header>
   );
 }
+
+NavBar.propTypes = {
+  recherche: PropTypes.string.isRequired,
+  setRecherche: PropTypes.func.isRequired,
+};
