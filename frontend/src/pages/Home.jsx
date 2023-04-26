@@ -6,14 +6,35 @@ import Carrousel from "../components/Carrousel/Carrousel";
 import NavBar from "../components/NavBar/NavBar";
 
 export default function Home() {
-  const [animes, setAnimes] = useState([]);
+  const [animesAction, setAnimesAction] = useState([]);
+  const [animesSports, setAnimesSports] = useState([]);
+  const [animesSciFi, setAnimesSciFi] = useState([]);
+  const [animesDrama, setAnimesDrama] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API = "https://api.jikan.moe/v4/anime";
+
   useEffect(() => {
     axios
-      .get(API)
+      .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
       .then((response) => {
-        setAnimes(response.data.data);
+        setAnimesAction(response.data.data);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
+      .then((response) => {
+        setAnimesSports(response.data.data);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
+      .then((response) => {
+        setAnimesSciFi(response.data.data);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
+      .then((response) => {
+        setAnimesDrama(response.data.data);
         setLoading(false);
       })
       .catch((e) => console.error(e));
@@ -28,11 +49,11 @@ export default function Home() {
       <NavBar />
       <div className="template-selection">
         <Carrousel />
-        <Categorie animes={animes} titreCategorie="Action" />
-        <Categorie animes={animes} titreCategorie="Sports" />
+        <Categorie animes={animesAction} titreCategorie="Action" />
+        <Categorie animes={animesSports} titreCategorie="Sports" />
         <Carrousel />
-        <Categorie animes={animes} titreCategorie="Sci-Fi" />
-        <Categorie animes={animes} titreCategorie="Drama" />
+        <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
+        <Categorie animes={animesDrama} titreCategorie="Drama" />
         <Carrousel />
       </div>
       <Footer />
