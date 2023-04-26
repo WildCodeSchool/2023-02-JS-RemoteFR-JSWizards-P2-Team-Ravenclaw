@@ -11,7 +11,6 @@ import animes from "../helpers/animes.json";
 export default function Home() {
   const APIrandom = "https://api.jikan.moe/v4/random/anime";
   const [loading, setLoading] = useState(true);
-  const [loading2, setLoading2] = useState(true);
   const [anime, setAnime] = useState({});
   const [anime2, setAnime2] = useState({});
 
@@ -21,23 +20,21 @@ export default function Home() {
       .then((response) => {
         // console.log(response.data.data);
         setAnime(response.data.data);
-        setLoading(false);
       })
       .catch((e) => console.error(e));
-  }, []);
-
-  useEffect(() => {
     axios
       .get(APIrandom)
       .then((response) => {
         // console.log(response.data.data);
         setAnime2(response.data.data);
-        setLoading2(false);
+        setLoading(false);
       })
       .catch((e) => console.error(e));
   }, []);
 
-  if (loading || loading2 === true) {
+  // useEffect(() => {}, []);
+
+  if (loading === true) {
     return <p>"Page En cours de chargement"</p>;
   }
   return (
