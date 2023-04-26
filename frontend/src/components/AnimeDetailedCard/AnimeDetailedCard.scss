@@ -1,1 +1,20 @@
 @import "../../App.scss";
+
+.anime-detailed-card {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+  }
+  h3 {
+    font-family: $font-family-heading;
+  }
+  h4 {
+    font-family: $font-family-heading;
+  }
+  p {
+    font-family: $font-family-text;
+  }
+}

@@ -45,13 +45,17 @@ export default function Home() {
       <NavBar />
       <div className="template-selection">
         <Carrousel />
-        <Categorie animes={animes} titreCategorie="Action" />
-        <Categorie animes={animes} titreCategorie="Sports" />
-        <AnimeDetailedCard anime={anime} />
+        <div className="categorie-adc">
+          <Categorie animes={animes} titreCategorie="Action" />
+          <Categorie animes={animes} titreCategorie="Sports" />
+          <AnimeDetailedCard anime={anime} />
+        </div>
         <Carrousel />
-        <AnimeDetailedCard anime={anime2} />
-        <Categorie animes={animes} titreCategorie="Sci-Fi" />
-        <Categorie animes={animes} titreCategorie="Drama" />
+        <div className="adc-categorie">
+          <AnimeDetailedCard anime={anime2} />
+          <Categorie animes={animes} titreCategorie="Sci-Fi" />
+          <Categorie animes={animes} titreCategorie="Drama" />
+        </div>
         <Carrousel />
       </div>
       <Footer />

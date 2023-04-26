@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./AnimeDetailedCard.scss";
 
 export default function AnimeDetailedCard({ anime }) {
   return (
