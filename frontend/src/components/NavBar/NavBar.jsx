@@ -1,5 +1,4 @@
-// import { useState } from "react";
-// import React from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./NavBar.scss";
 
@@ -17,28 +16,31 @@ export default function NavBar({ recherche, setRecherche }) {
     // console.log(recherche);
   }
 
+  const navigate = useNavigate();
   function onSearch(e) {
     e.preventDefault(); /** Evite le rechargement de la page */
-
+    navigate("/search");
     // console.log(recherche);
   }
 
   return (
     <header>
-      <img
-        src="./src/assets/logo/Logo-AlloAnime-desktop.svg"
-        alt="logo AlloAnime"
-        width="350"
-        height="60"
-        className="logo-desktop"
-      />
-      <img
-        src="./src/assets/logo/Logo-AlloAnime-mobile.png"
-        alt="logo AlloAnime"
-        width="40"
-        height="30"
-        className="logo-mobile"
-      />
+      <a href="/">
+        <img
+          src="./src/assets/logo/Logo-AlloAnime-desktop.svg"
+          alt="logo AlloAnime"
+          width="350"
+          height="60"
+          className="logo-desktop"
+        />
+        <img
+          src="./src/assets/logo/Logo-AlloAnime-mobile.png"
+          alt="logo AlloAnime"
+          width="40"
+          height="30"
+          className="logo-mobile"
+        />
+      </a>
       <form onSubmit={onSearch}>
         <label>
           <input
