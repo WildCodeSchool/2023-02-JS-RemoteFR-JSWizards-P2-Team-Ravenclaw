@@ -46,15 +46,19 @@ export default function Home() {
       <div className="template-selection">
         <Carrousel />
         <div className="categorie-adc">
-          <Categorie animes={animes} titreCategorie="Action" />
-          <Categorie animes={animes} titreCategorie="Sports" />
+          <div className="categorie-x2">
+            <Categorie animes={animes} titreCategorie="Action" />
+            <Categorie animes={animes} titreCategorie="Sports" />
+          </div>
           <AnimeDetailedCard anime={anime} />
         </div>
         <Carrousel />
         <div className="adc-categorie">
           <AnimeDetailedCard anime={anime2} />
-          <Categorie animes={animes} titreCategorie="Sci-Fi" />
-          <Categorie animes={animes} titreCategorie="Drama" />
+          <div className="categorie-x2">
+            <Categorie animes={animes} titreCategorie="Sci-Fi" />
+            <Categorie animes={animes} titreCategorie="Drama" />
+          </div>
         </div>
         <Carrousel />
       </div>
