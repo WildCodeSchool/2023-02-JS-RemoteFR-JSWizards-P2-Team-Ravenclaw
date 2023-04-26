@@ -17,7 +17,6 @@ export default function Home() {
   const [animesSports, setAnimesSports] = useState([]);
   const [animesSciFi, setAnimesSciFi] = useState([]);
   const [animesDrama, setAnimesDrama] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
