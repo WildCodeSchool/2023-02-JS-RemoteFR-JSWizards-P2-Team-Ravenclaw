@@ -56,7 +56,7 @@ export default function Home() {
       .catch((e) => console.error(e));
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
 
   if (loading === true) {

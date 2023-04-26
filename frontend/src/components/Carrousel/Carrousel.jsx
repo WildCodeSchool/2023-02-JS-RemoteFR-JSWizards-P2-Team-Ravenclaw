@@ -31,7 +31,7 @@ const items = [
   {
     id: 6,
     name: "Cheat Skill",
-    imageSrc: "./src/assets/images-carrousel/cheat-skill.webp",
+    imageSrc: "./assets/images-carrousel/cheat-skill.webp",
   },
 ];
 
