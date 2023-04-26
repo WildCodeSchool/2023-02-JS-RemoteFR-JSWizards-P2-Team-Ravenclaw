@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -59,8 +58,6 @@ export default function Home() {
       setLoading(false);
     }, 2000);
   }, []);
-
-
 
   if (loading === true) {
     return <p>"Page En cours de chargement"</p>;
