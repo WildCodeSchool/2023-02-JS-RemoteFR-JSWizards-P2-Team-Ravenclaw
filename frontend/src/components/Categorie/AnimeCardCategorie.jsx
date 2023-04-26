@@ -3,13 +3,13 @@ import "./VotreSelection.scss";
 
 function AnimeCardCategorie({ anime }) {
   return (
-    <div>
+    <div className="anime-card">
       <img
         className="image-selection"
         src={anime.images.jpg.image_url}
         alt={anime.title}
       />
-      <h3>{anime.title}</h3>
+      <h3 className="overflow">{anime.title}</h3>
     </div>
   );
 }

@@ -21,7 +21,7 @@ const items = [
   {
     id: 4,
     name: "Bofuri",
-    imageSrc: "./src/assets/images-carrousel/suzume.webp",
+    imageSrc: "./src/assets/images-carrousel/bofuri.webp",
   },
   {
     id: 5,
