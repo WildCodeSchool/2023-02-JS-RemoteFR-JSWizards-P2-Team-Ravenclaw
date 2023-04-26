@@ -27,9 +27,12 @@ export default function Home() {
       .then((response) => {
         // console.log(response.data.data);
         setAnime2(response.data.data);
-        setLoading(false);
+        // setLoading(false);
       })
       .catch((e) => console.error(e));
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   // useEffect(() => {}, []);
