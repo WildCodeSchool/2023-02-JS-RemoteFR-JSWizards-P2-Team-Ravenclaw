@@ -6,32 +6,32 @@ const items = [
   {
     id: 1,
     name: "Demon Slayer",
-    imageSrc: "./src/assets/images-carrousel/demon-slayer.webp",
+    imageSrc: "./assets/images-carrousel/demon-slayer.webp",
   },
   {
     id: 2,
     name: "Dr. Stone",
-    imageSrc: "./src/assets/images-carrousel/dr-stone.webp",
+    imageSrc: "./assets/images-carrousel/dr-stone.webp",
   },
   {
     id: 3,
     name: "Suzume",
-    imageSrc: "./src/assets/images-carrousel/suzume.webp",
+    imageSrc: "./assets/images-carrousel/suzume.webp",
   },
   {
     id: 4,
     name: "Bofuri",
-    imageSrc: "./src/assets/images-carrousel/bofuri.webp",
+    imageSrc: "./assets/images-carrousel/bofuri.webp",
   },
   {
     id: 5,
     name: "Skip & Loafer",
-    imageSrc: "./src/assets/images-carrousel/skip-loafer.webp",
+    imageSrc: "./assets/images-carrousel/skip-loafer.webp",
   },
   {
     id: 6,
     name: "Cheat Skill",
-    imageSrc: "./src/assets/images-carrousel/cheat-skill.webp",
+    imageSrc: "./assets/images-carrousel/cheat-skill.webp",
   },
 ];
 
