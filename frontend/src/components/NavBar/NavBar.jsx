@@ -12,14 +12,14 @@ export default function NavBar() {
   return (
     <header>
       <img
-        src="./src/assets/logo/Logo-AlloAnime-desktop.svg"
+        src="./assets/logo/logo-AlloAnime-desktop.svg"
         alt="logo AlloAnime"
         width="350"
         height="60"
         className="logo-desktop"
       />
       <img
-        src="./src/assets/logo/Logo-AlloAnime-mobile.png"
+        src="./assets/logo/logo-AlloAnime-mobile.png"
         alt="logo AlloAnime"
         width="40"
         height="30"
