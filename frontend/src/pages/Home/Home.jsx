@@ -18,21 +18,18 @@ export default function Home() {
       .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
       .then((response) => {
         setAnimesAction(response.data.data);
-        console.info(`1er call API`);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
       .then((response) => {
         setAnimesSports(response.data.data);
-        console.info(`2e call API`);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
       .then((response) => {
         setAnimesSciFi(response.data.data);
-        console.info(`3e call API`);
       })
       .catch((e) => console.error(e));
     setTimeout(() => {
@@ -41,12 +38,10 @@ export default function Home() {
         .then((response) => {
           setAnimesDrama(response.data.data);
           setLoading(true);
-          console.info(`4e call API`);
         })
         .catch((e) => console.error(e));
     }, 2000);
     setTimeout(() => {
-      console.info(`Fin Timeout`);
       setLoading(true);
     }, 3000);
   }, []);
