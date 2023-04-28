@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import { Search, SearchWithoutParams } from "./pages/Search";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
