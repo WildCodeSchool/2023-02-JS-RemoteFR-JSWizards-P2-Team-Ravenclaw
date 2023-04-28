@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Categorie from "../components/Categorie/Categorie";
-import Footer from "../components/Footer/Footer";
 import Carrousel from "../components/Carrousel/Carrousel";
-import NavBar from "../components/NavBar/NavBar";
 import AnimeDetailedCard from "../components/AnimeDetailedCard/AnimeDetailedCard";
 
 export default function Home() {
@@ -65,7 +63,6 @@ export default function Home() {
 
   return (
     <div>
-      <NavBar />
       <div className="template-selection">
         <Carrousel />
         <div className="categorie-adc">
@@ -85,7 +82,6 @@ export default function Home() {
         </div>
         <Carrousel />
       </div>
-      <Footer />
     </div>
   );
 }
