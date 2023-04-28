@@ -1,0 +1,26 @@
+@import "../../App.scss";
+
+.searchresult {
+  min-height: 57vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  h3 {
+    font-family: $font-family-heading;
+    color: $color-lightred;
+    margin: 1rem 0;
+  }
+  .anime-card {
+    padding: 30px 20px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    h3 {
+      text-align: center;
+    }
+    .image-selection {
+      width: 150px;
+      height: 200px;
+    }
+  }
+}

@@ -1,14 +1,10 @@
-import PropTypes from "prop-types";
 import Categorie from "../components/Categorie/Categorie";
-import Footer from "../components/Footer/Footer";
 import Carrousel from "../components/Carrousel/Carrousel";
-import NavBar from "../components/NavBar/NavBar";
 import animes from "../helpers/animes.json";
 
-export default function Home({ recherche, setRecherche }) {
+export default function Home() {
   return (
     <div>
-      <NavBar recherche={recherche} setRecherche={setRecherche} />
       <div className="template-selection">
         <Carrousel />
         <Categorie animes={animes} titreCategorie="Action" />
@@ -18,12 +14,6 @@ export default function Home({ recherche, setRecherche }) {
         <Categorie animes={animes} titreCategorie="Drama" />
         <Carrousel />
       </div>
-      <Footer />
     </div>
   );
 }
-
-Home.propTypes = {
-  recherche: PropTypes.string.isRequired,
-  setRecherche: PropTypes.func.isRequired,
-};

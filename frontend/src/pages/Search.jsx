@@ -1,19 +1,21 @@
-import PropTypes from "prop-types";
-import NavBar from "../components/NavBar/NavBar";
+import { useParams } from "react-router-dom";
 import SearchResult from "../components/SearchResult/SearchResult";
-import Footer from "../components/Footer/Footer";
 
-export default function Search({ recherche, setRecherche }) {
+export function Search() {
+  const { recherche } = useParams(); // /search/abc -> constante recherche vaudra "abc"
+
   return (
     <div>
-      <NavBar recherche={recherche} setRecherche={setRecherche} />
-      <SearchResult />
-      <Footer />
+      <SearchResult search={recherche} />
     </div>
   );
 }
 
-Search.propTypes = {
-  recherche: PropTypes.string.isRequired,
-  setRecherche: PropTypes.func.isRequired,
-};
+export function SearchWithoutParams() {
+  // On rentre dans ce composant si l'url resemble à : /search/ ou /search
+  return (
+    <div>
+      <SearchResult search="" />
+    </div>
+  );
+}

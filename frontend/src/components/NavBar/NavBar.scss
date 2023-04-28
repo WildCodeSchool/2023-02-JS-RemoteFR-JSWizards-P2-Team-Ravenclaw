@@ -173,7 +173,7 @@ header {
     }
   }
 
-  label:before {
+  label.searchbar:before {
     content: "";
     position: absolute;
     left: 10px;

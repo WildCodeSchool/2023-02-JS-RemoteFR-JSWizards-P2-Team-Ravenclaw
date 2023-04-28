@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 import "./NavBar.scss";
 
-export default function NavBar({ recherche, setRecherche }) {
+export default function NavBar() {
+  const [recherche, setRecherche] = useState("");
+
   const handleClickBurger = () => {
     const burger = document.getElementById("burger");
     const ul = document.querySelector("ul");
@@ -11,16 +13,15 @@ export default function NavBar({ recherche, setRecherche }) {
   };
 
   function onChange(e) {
-    // console.log(e.target.value); /** Cible dans l'input le target puis la valeur */
     setRecherche(e.target.value);
-    // console.log(recherche);
   }
 
   const navigate = useNavigate();
+
+  // const [animesFilter, setAnimesFilter] = useState(API)
   function onSearch(e) {
     e.preventDefault(); /** Evite le rechargement de la page */
-    navigate("/search");
-    // console.log(recherche);
+    navigate(`/search/${recherche}`);
   }
 
   return (
@@ -42,7 +43,7 @@ export default function NavBar({ recherche, setRecherche }) {
         />
       </a>
       <form onSubmit={onSearch}>
-        <label>
+        <label className="searchbar">
           <input
             type="text"
             placeholder=""
@@ -65,8 +66,3 @@ export default function NavBar({ recherche, setRecherche }) {
     </header>
   );
 }
-
-NavBar.propTypes = {
-  recherche: PropTypes.string.isRequired,
-  setRecherche: PropTypes.func.isRequired,
-};
