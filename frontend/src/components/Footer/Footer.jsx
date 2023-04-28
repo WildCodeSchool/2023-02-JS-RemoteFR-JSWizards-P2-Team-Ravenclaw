@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Footer.scss";
 
 export default function Footer() {
@@ -25,22 +27,7 @@ export default function Footer() {
         width="50"
         height="50"
       />
-      <form>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input id="name" type="name" />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input id="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <input id="message" type="message" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-
+      <Link to="/contact">Contact</Link>
       <p>© House Ravenclaw.WCS-P2-2023-02-Remote</p>
     </footer>
   );

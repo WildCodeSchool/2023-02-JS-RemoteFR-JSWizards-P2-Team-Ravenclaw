@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home";
 import { Search, SearchWithoutParams } from "./pages/Search";
 import "./App.scss";
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search/:recherche" element={<Search />} />
           <Route path="/search" element={<SearchWithoutParams />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
