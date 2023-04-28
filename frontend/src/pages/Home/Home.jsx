@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import Categorie from "../components/Categorie/Categorie";
-import Carrousel from "../components/Carrousel/Carrousel";
-import AnimeDetailedCard from "../components/AnimeDetailedCard/AnimeDetailedCard";
+import Categorie from "../../components/Categorie/Categorie";
+import Carrousel from "../../components/Carrousel/Carrousel";
+import AnimeDetailedCard from "../../components/AnimeDetailedCard/AnimeDetailedCard";
+import "./Home.scss";
 
 export default function Home() {
-  const [loading, setLoading] = useState(0);
+  const [loading, setLoading] = useState(false);
   const [animesAction, setAnimesAction] = useState([]);
   const [animesSports, setAnimesSports] = useState([]);
   const [animesSciFi, setAnimesSciFi] = useState([]);
@@ -17,38 +18,45 @@ export default function Home() {
       .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
       .then((response) => {
         setAnimesAction(response.data.data);
-        setLoading(loading + 1);
+        console.info(`1er call API`);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
       .then((response) => {
         setAnimesSports(response.data.data);
-        setLoading(loading + 1);
+        console.info(`2e call API`);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
       .then((response) => {
         setAnimesSciFi(response.data.data);
-        setLoading(loading + 1);
+        console.info(`3e call API`);
       })
       .catch((e) => console.error(e));
-    axios
-      .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
-      .then((response) => {
-        setAnimesDrama(response.data.data);
-        setLoading(loading + 1);
-      })
-      .catch((e) => console.error(e));
-    console.info(loading);
     setTimeout(() => {
-      setLoading(4);
-    }, 5000);
+      axios
+        .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
+        .then((response) => {
+          setAnimesDrama(response.data.data);
+          setLoading(true);
+          console.info(`4e call API`);
+        })
+        .catch((e) => console.error(e));
+    }, 2000);
+    setTimeout(() => {
+      console.info(`Fin Timeout`);
+      setLoading(true);
+    }, 3000);
   }, []);
 
-  if (loading < 4) {
-    return <p>"Page En cours de chargement"</p>;
+  if (!loading) {
+    return (
+      <div className="loading-screen">
+        <img src="./assets/no-boring.gif" alt="Loading Gif" />
+      </div>
+    );
   }
 
   return (
