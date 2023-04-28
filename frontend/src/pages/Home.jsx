@@ -3,7 +3,6 @@ import axios from "axios";
 
 import Categorie from "../components/Categorie/Categorie";
 import Carrousel from "../components/Carrousel/Carrousel";
-import animes from "../helpers/animes.json";
 import AnimeDetailedCard from "../components/AnimeDetailedCard/AnimeDetailedCard";
 
 export default function Home() {
