@@ -6,10 +6,7 @@ import Carrousel from "../components/Carrousel/Carrousel";
 import AnimeDetailedCard from "../components/AnimeDetailedCard/AnimeDetailedCard";
 
 export default function Home() {
-  const APIrandom = "https://api.jikan.moe/v4/random/anime";
-  const [loading, setLoading] = useState(true);
-  const [anime, setAnime] = useState({});
-  const [anime2, setAnime2] = useState({});
+  const [loading, setLoading] = useState(0);
   const [animesAction, setAnimesAction] = useState([]);
   const [animesSports, setAnimesSports] = useState([]);
   const [animesSciFi, setAnimesSciFi] = useState([]);
@@ -17,47 +14,40 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(APIrandom)
-      .then((response) => {
-        setAnime(response.data.data);
-      })
-      .catch((e) => console.error(e));
-    axios
-      .get(APIrandom)
-      .then((response) => {
-        setAnime2(response.data.data);
-      })
-      .catch((e) => console.error(e));
-    axios
       .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
       .then((response) => {
         setAnimesAction(response.data.data);
+        setLoading(loading + 1);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
       .then((response) => {
         setAnimesSports(response.data.data);
+        setLoading(loading + 1);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
       .then((response) => {
         setAnimesSciFi(response.data.data);
+        setLoading(loading + 1);
       })
       .catch((e) => console.error(e));
     axios
       .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
       .then((response) => {
         setAnimesDrama(response.data.data);
+        setLoading(loading + 1);
       })
       .catch((e) => console.error(e));
+    console.info(loading);
     setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+      setLoading(4);
+    }, 5000);
   }, []);
 
-  if (loading === true) {
+  if (loading < 4) {
     return <p>"Page En cours de chargement"</p>;
   }
 
@@ -70,11 +60,11 @@ export default function Home() {
             <Categorie animes={animesAction} titreCategorie="Action" />
             <Categorie animes={animesSports} titreCategorie="Sports" />
           </div>
-          <AnimeDetailedCard anime={anime} />
+          <AnimeDetailedCard anime={animesAction[15]} />
         </div>
         <Carrousel />
         <div className="adc-categorie">
-          <AnimeDetailedCard anime={anime2} />
+          <AnimeDetailedCard anime={animesSciFi[16]} />
           <div className="categorie-x2">
             <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
             <Categorie animes={animesDrama} titreCategorie="Drama" />
