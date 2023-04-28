@@ -5,6 +5,7 @@ body {
 }
 
 .bloc-selection {
+  overflow: hidden;
   h2,
   h3 {
     font-family: $font-family-heading;
