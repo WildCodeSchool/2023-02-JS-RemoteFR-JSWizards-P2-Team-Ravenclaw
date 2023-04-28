@@ -18,7 +18,6 @@ export default function NavBar() {
 
   const navigate = useNavigate();
 
-  // const [animesFilter, setAnimesFilter] = useState(API)
   function onSearch(e) {
     e.preventDefault(); /** Evite le rechargement de la page */
     navigate(`/search/${recherche}`);
