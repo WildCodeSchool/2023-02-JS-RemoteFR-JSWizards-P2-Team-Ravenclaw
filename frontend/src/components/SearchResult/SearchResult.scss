@@ -1,7 +1,7 @@
 @import "../../App.scss";
 
 .searchresult {
-  min-height: 57vh;
+  min-height: calc(100vh - 250px);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   h3 {
