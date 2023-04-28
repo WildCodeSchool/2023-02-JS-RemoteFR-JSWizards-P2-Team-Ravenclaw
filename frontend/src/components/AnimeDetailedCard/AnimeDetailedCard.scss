@@ -1,0 +1,46 @@
+@import "../../App.scss";
+
+.categorie-adc {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  //   gap: 16px;
+}
+
+.adc-categorie {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  //   gap: 16px;
+}
+
+.categorie-x2 {
+  width: 946px;
+}
+
+.anime-detailed-card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 800px;
+  background-color: $color-lightblue;
+  padding: 1em;
+  margin: 0 32px;
+  img {
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+  }
+  h3 {
+    font-family: $font-family-heading;
+    margin: 1em 0 1em 0;
+    text-align: center;
+    color: $color-darkred;
+  }
+  h4 {
+    font-family: $font-family-heading;
+    color: $color-darkred;
+  }
+  p {
+    font-family: $font-family-text;
+    color: $color-darkblue;
+  }
+}

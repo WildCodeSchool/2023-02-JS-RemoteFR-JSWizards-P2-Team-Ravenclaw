@@ -1,24 +1,77 @@
-import Categorie from "../components/Categorie/Categorie";
-import Footer from "../components/Footer/Footer";
-import Carrousel from "../components/Carrousel/Carrousel";
-import NavBar from "../components/NavBar/NavBar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-import animes from "../helpers/animes.json";
+import Categorie from "../components/Categorie/Categorie";
+import Carrousel from "../components/Carrousel/Carrousel";
+import AnimeDetailedCard from "../components/AnimeDetailedCard/AnimeDetailedCard";
 
 export default function Home() {
+  const [loading, setLoading] = useState(0);
+  const [animesAction, setAnimesAction] = useState([]);
+  const [animesSports, setAnimesSports] = useState([]);
+  const [animesSciFi, setAnimesSciFi] = useState([]);
+  const [animesDrama, setAnimesDrama] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
+      .then((response) => {
+        setAnimesAction(response.data.data);
+        setLoading(loading + 1);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
+      .then((response) => {
+        setAnimesSports(response.data.data);
+        setLoading(loading + 1);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
+      .then((response) => {
+        setAnimesSciFi(response.data.data);
+        setLoading(loading + 1);
+      })
+      .catch((e) => console.error(e));
+    axios
+      .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
+      .then((response) => {
+        setAnimesDrama(response.data.data);
+        setLoading(loading + 1);
+      })
+      .catch((e) => console.error(e));
+    console.info(loading);
+    setTimeout(() => {
+      setLoading(4);
+    }, 5000);
+  }, []);
+
+  if (loading < 4) {
+    return <p>"Page En cours de chargement"</p>;
+  }
+
   return (
     <div>
-      <NavBar />
       <div className="template-selection">
         <Carrousel />
-        <Categorie animes={animes} titreCategorie="Action" />
-        <Categorie animes={animes} titreCategorie="Sports" />
+        <div className="categorie-adc">
+          <div className="categorie-x2">
+            <Categorie animes={animesAction} titreCategorie="Action" />
+            <Categorie animes={animesSports} titreCategorie="Sports" />
+          </div>
+          <AnimeDetailedCard anime={animesAction[15]} />
+        </div>
         <Carrousel />
-        <Categorie animes={animes} titreCategorie="Sci-Fi" />
-        <Categorie animes={animes} titreCategorie="Drama" />
+        <div className="adc-categorie">
+          <AnimeDetailedCard anime={animesSciFi[16]} />
+          <div className="categorie-x2">
+            <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
+            <Categorie animes={animesDrama} titreCategorie="Drama" />
+          </div>
+        </div>
         <Carrousel />
       </div>
-      <Footer />
     </div>
   );
 }

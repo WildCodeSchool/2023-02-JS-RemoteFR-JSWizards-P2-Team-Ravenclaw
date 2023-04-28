@@ -1,0 +1,27 @@
+@import "../../App.scss";
+
+.contact-form {
+  min-height: calc(100vh - 250px);
+  margin: 0 auto;
+  width: 600px;
+  padding-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: red;
+  button {
+    background-color: rgb(231, 14, 14);
+    font-size: 20px;
+  }
+  input {
+    width: 600px;
+    margin: 1em 0;
+  }
+  textarea {
+    margin: 1em 0;
+    height: 300px;
+    width: 600px;
+    padding: 10px 30px;
+    background-color: $color-lightblue;
+    border: 1px solid rgb(111, 110, 110);
+  }
+}
