@@ -105,8 +105,11 @@ header {
     padding: 10px 0;
     text-align: center;
     list-style: none;
-    color: $color-lightred;
     font-size: 1.1em;
+    a {
+      color: $color-lightred;
+      text-decoration: none;
+    }
   }
 }
 
@@ -143,6 +146,9 @@ header {
       li {
         font-size: 0.7em;
         padding: 0 1em;
+        a:hover {
+          color: $color-darkblue;
+        }
       }
     }
   }
