@@ -1,21 +1,26 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./VotreSelection.scss";
 
 function AnimeCardCategorie({ anime }) {
+  const animeId = anime.mal_id;
   return (
     <div className="anime-card">
-      <img
-        className="image-selection"
-        src={anime.images.jpg.image_url}
-        alt={anime.title}
-      />
-      <h3 className="overflow">{anime.title}</h3>
+      <Link to={`/anime/${animeId}`}>
+        <img
+          className="image-selection"
+          src={anime.images.jpg.image_url}
+          alt={anime.title}
+        />
+        <h3 className="overflow">{anime.title}</h3>
+      </Link>
     </div>
   );
 }
 
 AnimeCardCategorie.propTypes = {
   anime: PropTypes.shape({
+    mal_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     images: PropTypes.shape({
       jpg: PropTypes.shape({
