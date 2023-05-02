@@ -5,14 +5,10 @@ import AnimeCardCategorie from "../Categorie/AnimeCardCategorie";
 import "./SearchResult.scss";
 import "../Categorie/VotreSelection.scss";
 
-export default function SearchResult({ search }) {
+export default function SearchResult({ url }) {
   const [listeAnimes, setListeAnimes] = useState([]);
 
   function filtrerAnimes() {
-    let url = "https://api.jikan.moe/v4/anime?type=tv&limit=25";
-    if (search !== "") {
-      url += `&q=${search}`;
-    }
     axios
       .get(url)
       .then((response) => {
@@ -23,12 +19,12 @@ export default function SearchResult({ search }) {
 
   useEffect(() => {
     filtrerAnimes();
-  }, [search]);
+  }, [url]);
 
   return (
     <div id="searchresult" className="dad-anime-card">
       {listeAnimes.length === 0 ? (
-        <p>Vide</p>
+        <p>Pas de résultats ou il y a eu une erreur pendant l'appel api</p>
       ) : (
         listeAnimes.map((anime) => (
           <AnimeCardCategorie anime={anime} key={anime.mal_id} />
@@ -39,5 +35,5 @@ export default function SearchResult({ search }) {
 }
 
 SearchResult.propTypes = {
-  search: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
