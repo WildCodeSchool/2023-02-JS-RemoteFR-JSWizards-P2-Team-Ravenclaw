@@ -4,6 +4,7 @@ import "./VotreSelection.scss";
 
 function AnimeCardCategorie({ anime }) {
   const animeId = anime.mal_id;
+
   return (
     <div className="anime-card">
       <Link to={`/anime/${animeId}`}>
