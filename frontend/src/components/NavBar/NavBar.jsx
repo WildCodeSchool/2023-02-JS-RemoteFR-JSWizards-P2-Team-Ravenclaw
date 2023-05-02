@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./NavBar.scss";
 
 export default function NavBar() {
@@ -57,9 +57,15 @@ export default function NavBar() {
           <span id="burger" />
         </button>
         <ul>
-          <li>Films</li>
-          <li>Series</li>
-          <li>Les plus regardes</li>
+          <li>
+            <Link to="/films">Films</Link>
+          </li>
+          <li>
+            <Link to="/series">Series</Link>
+          </li>
+          <li>
+            <Link to="/favoris">Les plus regardes</Link>
+          </li>
         </ul>
       </nav>
     </header>
