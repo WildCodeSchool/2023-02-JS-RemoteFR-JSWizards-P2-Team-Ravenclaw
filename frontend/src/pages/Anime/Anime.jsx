@@ -50,10 +50,8 @@ export default function Anime() {
         <p>{anime.synopsis}</p>
       </div>
       <iframe
-        width="1280"
-        height="720"
         src={anime.trailer.embed_url}
-        title="Cowboy Bebop - Japanese Blu-ray Trailer [HD]"
+        title={anime.title}
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       />
       <div className="episode-main">
