@@ -1,1 +1,48 @@
 @import "../../App.scss";
+
+.anime {
+  position: relative;
+  margin: 32px auto 16px auto;
+  //   margin-top: 32px;
+  display: flex;
+  width: 1280px;
+  align-items: center;
+  flex-direction: column;
+  .main-image {
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
+    margin-bottom: 32px;
+  }
+  .anime-desc {
+    position: absolute;
+    top: 40px;
+    // bottom: 680px;
+    right: 40px;
+    width: 640px;
+    height: 640px;
+    background-color: $color-darkblue-transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    h2 {
+      font-family: $font-family-heading;
+      color: $color-darkred;
+      padding: 0 0 1em 0;
+    }
+    p {
+      font-family: $font-family-text;
+      color: $color-lightblue;
+    }
+  }
+  iframe {
+    border: none;
+    margin-bottom: 16px;
+  }
+  .episode-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+  }
+}

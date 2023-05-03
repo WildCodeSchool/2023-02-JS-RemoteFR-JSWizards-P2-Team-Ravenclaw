@@ -40,18 +40,23 @@ export default function Anime() {
   }
   return (
     <div className="anime">
-      <div>
-        <img src={anime.trailer.images.large_image_url} alt={anime.title} />
+      <img
+        className="main-image"
+        src={anime.trailer.images.large_image_url}
+        alt={anime.title}
+      />
+      <div className="anime-desc">
         <h2>{anime.title}</h2>
         <p>{anime.synopsis}</p>
-        <iframe
-          width="1280"
-          height="720"
-          src={anime.trailer.embed_url}
-          title="Cowboy Bebop - Japanese Blu-ray Trailer [HD]"
-          frameBorder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        />
+      </div>
+      <iframe
+        width="1280"
+        height="720"
+        src={anime.trailer.embed_url}
+        title="Cowboy Bebop - Japanese Blu-ray Trailer [HD]"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      />
+      <div className="episode-main">
         {episodes.map((episode) => (
           <Episode key={episode.mal_id} episode={episode} />
         ))}
