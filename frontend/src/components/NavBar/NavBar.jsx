@@ -61,10 +61,10 @@ export default function NavBar() {
             <Link to="/films">Films</Link>
           </li>
           <li>
-            <Link to="/series">Series</Link>
+            <Link to="/ova">OVA</Link>
           </li>
           <li>
-            <Link to="/favoris">Les plus regardes</Link>
+            <Link to="/favoris">Les mieux notes</Link>
           </li>
         </ul>
       </nav>

@@ -6,7 +6,7 @@ import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import FilmPage from "./pages/FilmPage";
-import SeriePage from "./pages/SeriePage";
+import OvaPage from "./pages/OvaPage";
 import FavorisPage from "./pages/FavorisPage";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route path="/search" element={<SearchWithoutParams />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/films" element={<FilmPage />} />
-          <Route path="/series" element={<SeriePage />} />
+          <Route path="/ova" element={<OvaPage />} />
           <Route path="/favoris" element={<FavorisPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
