@@ -5,8 +5,10 @@ export default function Episode({ episode }) {
   return (
     <div className="episode">
       <img src={episode.images.jpg.image_url} alt={episode.title} />
-      <h3>{episode.episode}</h3>
-      <h4>{episode.title}</h4>
+      <div className="episode-desc">
+        <h3>{episode.episode}</h3>
+        <h4>{episode.title}</h4>
+      </div>
     </div>
   );
 }
