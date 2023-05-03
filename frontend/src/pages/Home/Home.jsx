@@ -80,11 +80,11 @@ export default function Home() {
         </div>
         <Carrousel />
         <div className="adc-categorie">
-          <AnimeDetailedCard anime={randomAnime2} />
-          <div className="categorie-x2">
+          <div className="x2-categorie">
             <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
             <Categorie animes={animesDrama} titreCategorie="Drama" />
           </div>
+          <AnimeDetailedCard anime={randomAnime2} />
         </div>
         <Carrousel />
       </div>
