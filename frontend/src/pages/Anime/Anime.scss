@@ -70,23 +70,17 @@
 // DESKTOP MODE//
 @media screen and (min-width: 1024px) {
   .anime {
-    position: relative;
     max-width: 992px;
     .main-image {
-      width: 100%;
       max-width: 992px;
       height: calc(992px / 16 * 9);
     }
     .anime-desc {
-      position: absolute;
-      top: 40px;
-      right: 40px;
       width: 478px;
       height: 478px;
       background-color: $color-darkblue-transparent;
     }
     iframe {
-      width: 100%;
       max-width: 992px;
       height: calc(992px / 16 * 9);
     }
