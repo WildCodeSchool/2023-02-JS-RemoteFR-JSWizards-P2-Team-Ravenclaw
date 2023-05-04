@@ -38,13 +38,14 @@ export default function Anime() {
       </div>
     );
   }
+
+  let imgSrc = anime.trailer.images.large_image_url;
+  if (!anime.trailer.images.large_image_url) {
+    imgSrc = "/assets/coming-soon.png";
+  }
   return (
     <div className="anime">
-      <img
-        className="main-image"
-        src={anime.trailer.images.large_image_url}
-        alt={anime.title}
-      />
+      <img className="main-image" src={imgSrc} alt={anime.title} />
       <div className="anime-desc">
         <h2>{anime.title}</h2>
         <p>{anime.synopsis ? `${anime.synopsis}` : "Absence de synopsis"}</p>
