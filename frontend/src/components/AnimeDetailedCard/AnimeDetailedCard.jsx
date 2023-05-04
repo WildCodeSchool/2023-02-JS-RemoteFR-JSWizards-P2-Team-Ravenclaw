@@ -3,13 +3,20 @@ import { Link } from "react-router-dom";
 import "./AnimeDetailedCard.scss";
 
 export default function AnimeDetailedCard({ anime }) {
+  let { synopsis } = anime;
+  if (!synopsis) {
+    synopsis = "Absence de synopsis !";
+  }
   return (
     <div className="anime-detailed-card">
       <Link to={`/anime/${anime.mal_id}`}>
-        <img src={anime.images.jpg.large_image_url} alt={anime.title} />
+        <img
+          src={anime.images.jpg.large_image_url}
+          alt={anime.title}
+          height="120px"
+        />
         <h3>{anime.title}</h3>
-        <h4>Synopsis :</h4>
-        <p>{anime.synopsis}</p>
+        <p>{synopsis}</p>
       </Link>
     </div>
   );
