@@ -16,38 +16,46 @@ export default function Home() {
   const [randomAnime2, setRandomAnime2] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.jikan.moe/v4/anime?genres=1&type=tv")
+      .get(
+        "https://api.jikan.moe/v4/anime?type=tv&genres=1&page=2&min_score=1&order_by=rank"
+      )
       .then((response) => {
         setAnimesAction(response.data.data);
       })
       .catch((e) => console.error(e));
     axios
-      .get("https://api.jikan.moe/v4/anime?genres=30&type=tv")
+      .get(
+        "https://api.jikan.moe/v4/anime?type=tv&genres=30&page=1&min_score=1&order_by=rank"
+      )
       .then((response) => {
         setAnimesSports(response.data.data);
       })
       .catch((e) => console.error(e));
     axios
-      .get("https://api.jikan.moe/v4/anime?genres=24&type=tv")
+      .get(
+        "https://api.jikan.moe/v4/anime?type=tv&genres=24&page=1&min_score=6"
+      )
       .then((response) => {
         setAnimesSciFi(response.data.data);
       })
       .catch((e) => console.error(e));
     setTimeout(() => {
       axios
-        .get("https://api.jikan.moe/v4/anime?genres=8&type=tv")
+        .get(
+          "https://api.jikan.moe/v4/anime?type=tv&genres=15&page=1&min_score=7"
+        )
         .then((response) => {
           setAnimesDrama(response.data.data);
         })
         .catch((e) => console.error(e));
       axios
-        .get("https://api.jikan.moe/v4/random/anime")
+        .get("https://api.jikan.moe/v4/random/anime?rating=r17")
         .then((response) => {
           setRandomAnime1(response.data.data);
         })
         .catch((e) => console.error(e));
       axios
-        .get("https://api.jikan.moe/v4/random/anime")
+        .get("https://api.jikan.moe/v4/random/anime?rating=r17")
         .then((response) => {
           setRandomAnime2(response.data.data);
           setLoading(true);
@@ -82,7 +90,7 @@ export default function Home() {
         <div className="adc-categorie">
           <div className="x2-categorie">
             <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
-            <Categorie animes={animesDrama} titreCategorie="Drama" />
+            <Categorie animes={animesDrama} titreCategorie="Special Rouquin" />
           </div>
           <AnimeDetailedCard anime={randomAnime2} />
         </div>
