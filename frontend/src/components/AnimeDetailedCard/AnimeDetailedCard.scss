@@ -1,29 +1,13 @@
 @import "../../App.scss";
 
-.categorie-adc {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  //   gap: 16px;
-}
-
-.adc-categorie {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  //   gap: 16px;
-}
-
-.categorie-x2 {
-  width: 946px;
-}
-
-.anime-detailed-card {
+.anime-detailed-card a {
   display: flex;
   flex-direction: column;
-  width: 320px;
-  height: 800px;
+  overflow: hidden;
+  width: auto;
+  max-height: 400px;
   background-color: $color-lightblue;
-  padding: 1em;
-  margin: 0 32px;
+  margin-bottom: 2rem;
   img {
     width: auto;
     height: 180px;
@@ -31,16 +15,69 @@
   }
   h3 {
     font-family: $font-family-heading;
-    margin: 1em 0 1em 0;
     text-align: center;
     color: $color-darkred;
+    padding: 1em;
   }
   h4 {
     font-family: $font-family-heading;
     color: $color-darkred;
+    display: none;
   }
   p {
     font-family: $font-family-text;
     color: $color-darkblue;
+    text-align: justify;
+    padding: 0 1rem 1rem 1rem;
+    max-height: 160px;
+  }
+}
+
+// TABLETTE MODE //
+@media screen and (min-width: 768px) {
+  .categorie-adc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  .adc-categorie {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  .categorie-x2 {
+    max-width: clamp(436px, calc(100vw - 300px - 2rem), calc(724px - 2rem));
+  }
+  .x2-categorie {
+    max-width: clamp(436px, calc(100vw - 300px - 2rem), calc(724px - 2rem));
+  }
+  .anime-detailed-card a {
+    max-height: initial;
+    p {
+      max-height: initial;
+    }
+  }
+  .anime-detailed-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 300px;
+    height: 800px;
+    background-color: $color-lightblue;
+    padding: 0;
+  }
+}
+
+// DESKTOP MODE//
+@media screen and (min-width: 1024px) {
+  .categorie-x2 {
+    max-width: clamp(468px, calc(100vw - 300px - 2rem), calc(1030px - 2rem));
+  }
+  .x2-categorie {
+    max-width: clamp(468px, calc(100vw - 300px - 2rem), calc(1030px - 2rem));
   }
 }

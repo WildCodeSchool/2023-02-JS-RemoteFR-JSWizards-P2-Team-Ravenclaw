@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
 import AnimeCardCategorie from "../Categorie/AnimeCardCategorie";
 import "./SearchResult.scss";
-import animes from "../../helpers/animes.json";
+import "../Categorie/VotreSelection.scss";
 
-export default function SearchResult({ search }) {
+export default function SearchResult({ url }) {
   const [listeAnimes, setListeAnimes] = useState([]);
 
   function filtrerAnimes() {
-    const animeFiltered =
-      search === ""
-        ? animes
-        : animes.filter((currentAnime) =>
-            currentAnime.title.toLowerCase().includes(search.toLowerCase())
-          );
-    setListeAnimes(animeFiltered);
+    axios
+      .get(url)
+      .then((response) => {
+        setListeAnimes(response.data.data);
+      })
+      .catch((e) => console.error(e));
   }
 
   useEffect(() => {
     filtrerAnimes();
-  }, [search]);
+  }, [url]);
 
   return (
-    <div className="searchresult">
+    <div id="searchresult" className="dad-anime-card">
       {listeAnimes.length === 0 ? (
-        <p>Vide</p>
+        <p>Pas de résultats ou il y a eu une erreur pendant l'appel api</p>
       ) : (
         listeAnimes.map((anime) => (
           <AnimeCardCategorie anime={anime} key={anime.mal_id} />
@@ -35,5 +35,5 @@ export default function SearchResult({ search }) {
 }
 
 SearchResult.propTypes = {
-  search: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
