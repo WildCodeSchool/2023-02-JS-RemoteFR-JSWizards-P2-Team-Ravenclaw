@@ -47,6 +47,7 @@ $border-width: 2px;
 $gap: 16px;
 $margin: 32px;
 $padding: 8px;
+$hauteur-min: calc(100vh - 283px);
 
 * {
   box-sizing: border-box;
