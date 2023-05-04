@@ -1,6 +1,5 @@
 @import "../../App.scss";
 
-
 .anime-detailed-card a {
   display: flex;
   flex-direction: row;
@@ -10,8 +9,7 @@
   background-color: $color-lightblue;
   padding: 1em;
   margin-bottom: 5rem;
-  
-  
+
   img {
     width: auto;
     height: 180px;
@@ -32,102 +30,92 @@
     font-family: $font-family-text;
     color: $color-darkblue;
     margin-left: 2rem;
-    
   }
 }
 
 .regarder {
-  background-color: #D90429;
-
+  background-color: #d90429;
 }
-
 
 // TABLETTE MODE//
 @media screen and (min-width: 768px) {
-.categorie-adc {
-  display: flex;
-  flex-direction:row;
-.anime-detailed-card{
-  margin-left: 5%;
-  
-}
-}
-
-.adc-categorie {
-  display: flex;
-  flex-direction:row-reverse;
-.anime-detailed-card{
-  margin-right: 5%;
-}
-}
-
-.categorie-x2 {
-  width:62%;
-  margin-left: 1%;
-
-}
-.x2-categorie {
-  width:62%;
-  margin-right: 1%;
-}
-
-.anime-detailed-card {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  height: 800px;
-  background-color: $color-lightblue;
-  overflow: hidden;
-  padding: 0;
-  
-  img {
-    
-    height: 180px;
-    object-fit: cover;
-    width: 100%;
+  .categorie-adc {
+    display: flex;
+    flex-direction: row;
+    .anime-detailed-card {
+      margin-left: 5%;
+    }
   }
-  h3 {
-    font-family: $font-family-heading;
-    margin: 1em 0 1em 0;
-    text-align: center;
-    color: $color-darkred;
+
+  .adc-categorie {
+    display: flex;
+    flex-direction: row-reverse;
+    .anime-detailed-card {
+      margin-right: 5%;
+    }
   }
-  h4 {
-    font-family: $font-family-heading;
-    color: $color-darkred;
+
+  .categorie-x2 {
+    width: 62%;
+    margin-left: 1%;
   }
-  p {
-    font-family: $font-family-text;
-    color: $color-darkblue;
-    text-align: justify;
-    margin: 0 1rem;
+  .x2-categorie {
+    width: 62%;
+    margin-right: 1%;
   }
-}
+
+  .anime-detailed-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 800px;
+    background-color: $color-lightblue;
+    overflow: hidden;
+    padding: 0;
+
+    img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+    h3 {
+      font-family: $font-family-heading;
+      margin: 1em 0 1em 0;
+      text-align: center;
+      color: $color-darkred;
+    }
+    h4 {
+      font-family: $font-family-heading;
+      color: $color-darkred;
+    }
+    p {
+      font-family: $font-family-text;
+      color: $color-darkblue;
+      text-align: justify;
+      margin: 0 1rem;
+    }
+  }
 }
 // DESKTOP MODE//
 @media screen and (min-width: 1024px) {
-  .anime-detailed-card{
+  .anime-detailed-card {
     margin-right: 2%;
-    margin-left:2%;
+    margin-left: 2%;
   }
 
   .categorie-x2 {
     margin-left: 5%;
-  
   }
   .x2-categorie {
     margin-right: 5%;
   }
 
-  .anime-detailed-card{
+  .anime-detailed-card {
     width: 40%;
-   
+
     img {
       margin-top: 0;
       object-fit: cover;
     }
   }
 }
-
-
-
