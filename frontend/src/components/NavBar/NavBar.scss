@@ -15,7 +15,18 @@ header {
   .logo-desktop {
     display: none;
   }
-
+  #cat-button {
+    cursor: pointer;
+    color: $color-white;
+    font-size: 1em;
+    font-family: $font-family-heading;
+  }
+  .sous {
+    display: none;
+  }
+  .sous.active {
+    display: block;
+  }
   button {
     border: none;
     margin: 0;
@@ -110,9 +121,10 @@ header {
       text-decoration: none;
     }
   }
-}
-.sous li {
-  font-size: 1px;
+
+  .sous li {
+    font-size: small;
+  }
 }
 
 /* VERSION TABLETTE */
@@ -164,12 +176,11 @@ header {
       li {
         float: none;
         width: 100%;
-        text-align: left;
+        text-align: center;
       }
       display: none;
       background-color: $color-lightblue;
       position: absolute;
-      height: 375px;
       z-index: 1000;
     }
     .loupe::after {
@@ -180,7 +191,6 @@ header {
     a {
       display: block;
       text-decoration: none;
-      border-bottom: 2px solid transparent;
       padding: 10px 0px;
     }
     .loupe {
@@ -192,6 +202,9 @@ header {
         flex-direction: column;
         position: absolute;
         top: 30px;
+      }
+      li:first-child {
+        padding: 2em 1em;
       }
       li {
         font-size: 0.7em;
