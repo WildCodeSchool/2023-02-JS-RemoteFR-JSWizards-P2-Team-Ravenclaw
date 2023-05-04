@@ -1,0 +1,41 @@
+@import "../../../App.scss";
+
+.episode {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: $color-lightblue;
+  width: 100vw;
+  height: 152px;
+  margin: 16px 0;
+  padding: 16px;
+  img {
+    height: 120px;
+    margin: 16px 0;
+  }
+  .episode-desc {
+    padding: 0 16px;
+    overflow: hidden;
+    h3 {
+      font-family: $font-family-heading;
+      color: $color-darkred;
+      padding: 0 0 16px 0;
+    }
+    h4 {
+      font-family: $font-family-text;
+      color: $color-darkblue;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .episode {
+    width: calc((768px - 32px));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .episode {
+    width: calc((1024px - 64px) / 2);
+  }
+}

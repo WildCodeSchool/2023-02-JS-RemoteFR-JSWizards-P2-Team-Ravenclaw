@@ -1,29 +1,17 @@
 @import "../../App.scss";
 
-.categorie-adc {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  //   gap: 16px;
-}
 
-.adc-categorie {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  //   gap: 16px;
-}
-
-.categorie-x2 {
-  width: 946px;
-}
-
-.anime-detailed-card {
+.anime-detailed-card a {
   display: flex;
-  flex-direction: column;
-  width: 320px;
-  height: 800px;
+  flex-direction: row;
+  overflow: hidden;
+  width: auto;
+  height: 295px;
   background-color: $color-lightblue;
   padding: 1em;
-  margin: 0 32px;
+  margin-bottom: 5rem;
+  
+  
   img {
     width: auto;
     height: 180px;
@@ -38,9 +26,108 @@
   h4 {
     font-family: $font-family-heading;
     color: $color-darkred;
+    display: none;
   }
   p {
     font-family: $font-family-text;
     color: $color-darkblue;
+    margin-left: 2rem;
+    
   }
 }
+
+.regarder {
+  background-color: #D90429;
+
+}
+
+
+// TABLETTE MODE//
+@media screen and (min-width: 768px) {
+.categorie-adc {
+  display: flex;
+  flex-direction:row;
+.anime-detailed-card{
+  margin-left: 5%;
+  
+}
+}
+
+.adc-categorie {
+  display: flex;
+  flex-direction:row-reverse;
+.anime-detailed-card{
+  margin-right: 5%;
+}
+}
+
+.categorie-x2 {
+  width:62%;
+  margin-left: 1%;
+
+}
+.x2-categorie {
+  width:62%;
+  margin-right: 1%;
+}
+
+.anime-detailed-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 800px;
+  background-color: $color-lightblue;
+  overflow: hidden;
+  padding: 0;
+  
+  img {
+    
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
+  h3 {
+    font-family: $font-family-heading;
+    margin: 1em 0 1em 0;
+    text-align: center;
+    color: $color-darkred;
+  }
+  h4 {
+    font-family: $font-family-heading;
+    color: $color-darkred;
+  }
+  p {
+    font-family: $font-family-text;
+    color: $color-darkblue;
+    text-align: justify;
+    margin: 0 1rem;
+  }
+}
+}
+// DESKTOP MODE//
+@media screen and (min-width: 1024px) {
+  .anime-detailed-card{
+    margin-right: 2%;
+    margin-left:2%;
+  }
+
+  .categorie-x2 {
+    margin-left: 5%;
+  
+  }
+  .x2-categorie {
+    margin-right: 5%;
+  }
+
+  .anime-detailed-card{
+    width: 40%;
+   
+    img {
+      margin-top: 0;
+      object-fit: cover;
+    }
+  }
+}
+
+
+

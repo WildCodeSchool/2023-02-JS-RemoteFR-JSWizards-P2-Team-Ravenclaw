@@ -1,0 +1,97 @@
+@import "../../App.scss";
+
+.anime {
+  margin: 32px auto 16px auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  .main-image {
+    width: 100vw;
+    height: calc(100vw / 16 * 9);
+    object-fit: cover;
+    margin-bottom: 32px;
+  }
+  .anime-desc {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    h2 {
+      font-family: $font-family-heading;
+      color: $color-darkred;
+      padding: 0 0 1em 0;
+    }
+    p {
+      font-family: $font-family-text;
+      color: $color-lightblue;
+    }
+  }
+  iframe {
+    width: 100vw;
+    height: calc(100vw / 16 * 9);
+    border: none;
+    margin-bottom: 16px;
+  }
+  .episode-main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+// TABLETTE MODE//
+@media screen and (min-width: 768px) {
+  .anime {
+    position: relative;
+    max-width: 736px;
+    .main-image {
+      width: 100%;
+      max-width: 736px;
+      height: 720px;
+    }
+    .anime-desc {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: calc(736px - 80px);
+      height: 640px;
+      background-color: $color-darkblue-transparent;
+    }
+    iframe {
+      width: 100%;
+      max-width: 736px;
+      height: calc(736px / 16 * 9);
+    }
+  }
+}
+
+// DESKTOP MODE//
+@media screen and (min-width: 1024px) {
+  .anime {
+    position: relative;
+    max-width: 992px;
+    .main-image {
+      width: 100%;
+      max-width: 992px;
+      height: calc(992px / 16 * 9);
+    }
+    .anime-desc {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 478px;
+      height: 478px;
+      background-color: $color-darkblue-transparent;
+    }
+    iframe {
+      width: 100%;
+      max-width: 992px;
+      height: calc(992px / 16 * 9);
+    }
+    .episode-main {
+      gap: 0 32px;
+    }
+  }
+}
