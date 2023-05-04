@@ -1,13 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Search, SearchWithoutParams } from "./pages/Search";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Anime from "./pages/Anime/Anime";
-import { Search, SearchWithoutParams } from "./pages/Search";
-import "./App.scss";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
 import AventurePage from "./pages/AventurePage";
 import ActionPage from "./pages/ActionPage";
 import FantasyPage from "./pages/FantasyPage";
@@ -16,6 +13,7 @@ import SeinenPage from "./pages/SeinenPage";
 import ShonenPage from "./pages/ShonenPage";
 import FavorisPage from "./pages/FavorisPage";
 import OavPage from "./pages/OavPage";
+import "./App.scss";
 
 function App() {
   return (
