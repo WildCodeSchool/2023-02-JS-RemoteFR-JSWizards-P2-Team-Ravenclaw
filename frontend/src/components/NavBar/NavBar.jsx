@@ -56,12 +56,32 @@ export default function NavBar() {
         <button type="button" id="link" onClick={handleClickBurger}>
           <span id="burger" />
         </button>
-        <ul>
-          <li>
-            <Link to="/films">Films</Link>
+        <ul className="loupe">
+          <li className="deroulant">
+            Categorie
+            <ul className="sous">
+              <li>
+                <Link to="/aventure">Adventure</Link>
+              </li>
+              <li>
+                <Link to="/action">Action</Link>
+              </li>
+              <li>
+                <Link to="/fantasy">Fantasy</Link>
+              </li>
+              <li>
+                <Link to="/gourmet">Gourmet</Link>
+              </li>
+              <li>
+                <Link to="/seinen">Seinen</Link>
+              </li>
+              <li>
+                <Link to="/shonen">Shonen</Link>
+              </li>
+            </ul>
           </li>
           <li>
-            <Link to="/ova">OVA</Link>
+            <Link to="/oav">OAV</Link>
           </li>
           <li>
             <Link to="/favoris">Les mieux notes</Link>

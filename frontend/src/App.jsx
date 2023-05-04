@@ -5,9 +5,14 @@ import { Search, SearchWithoutParams } from "./pages/Search";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import FilmPage from "./pages/FilmPage";
-import OvaPage from "./pages/OvaPage";
+import AventurePage from "./pages/AventurePage";
+import ActionPage from "./pages/ActionPage";
+import FantasyPage from "./pages/FantasyPage";
+import GourmetPage from "./pages/GourmetPage";
+import SeinenPage from "./pages/SeinenPage";
+import ShonenPage from "./pages/ShonenPage";
 import FavorisPage from "./pages/FavorisPage";
+import OavPage from "./pages/OavPage";
 
 function App() {
   return (
@@ -19,9 +24,16 @@ function App() {
           <Route path="/search/:recherche" element={<Search />} />
           <Route path="/search" element={<SearchWithoutParams />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/films" element={<FilmPage />} />
-          <Route path="/ova" element={<OvaPage />} />
+
+          <Route path="/aventure" element={<AventurePage />} />
+          <Route path="/action" element={<ActionPage />} />
+          <Route path="/fantasy" element={<FantasyPage />} />
+          <Route path="/gourmet" element={<GourmetPage />} />
+          <Route path="/seinen" element={<SeinenPage />} />
+          <Route path="/shonen" element={<ShonenPage />} />
           <Route path="/favoris" element={<FavorisPage />} />
+          <Route path="/oav" element={<OavPage />} />
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

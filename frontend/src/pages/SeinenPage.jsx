@@ -1,9 +1,9 @@
 import React from "react";
 import SearchResult from "../components/SearchResult/SearchResult";
 
-function SeriePage() {
-  const url = "https://api.jikan.moe/v4/anime?type=ova&limit=25";
+function SeinenPage() {
+  const url = "https://api.jikan.moe/v4/anime?type=tv&genres=42";
   return <SearchResult url={url} />;
 }
 
-export default SeriePage;
+export default SeinenPage;

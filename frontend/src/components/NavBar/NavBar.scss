@@ -77,10 +77,10 @@ header {
     border-top: 2px black;
   }
 
-  ul {
+  .loupe {
     display: flex;
     flex-direction: column;
-    background: $color-darkblue;
+    background: $color-lightblue;
     position: absolute;
     width: 100%;
     left: 0;
@@ -93,24 +93,26 @@ header {
     }
   }
 
-  ul.open {
+  .loupe.open {
     transform: scaleY(1);
-    align-items: flex-start;
     li {
-      padding: 50px 100px;
+      padding: 40px 96px;
     }
   }
 
-  ul li {
-    padding: 10px 0;
+  .loupe li {
     text-align: center;
     list-style: none;
     font-size: 1.1em;
+    color: $color-lightred;
     a {
       color: $color-lightred;
       text-decoration: none;
     }
   }
+}
+.sous li {
+  font-size: 1px;
 }
 
 /* VERSION TABLETTE */
@@ -129,23 +131,72 @@ header {
     }
     padding: 30px 0;
     justify-content: space-around;
-    ul.open {
+    .loupe.open {
       padding: 0px 2em;
       align-items: center;
       li {
-        padding: 0 2em;
+        float: left;
+        text-align: center;
+        position: relative;
+        padding: 16px 2em;
       }
     }
   }
 
   nav {
-    ul {
+    .loupe.deroulant:hover {
+      color: $color-darkblue;
+    }
+    .loupe.deroulant {
+      a::after {
+        font-size: 12px;
+      }
+    }
+    .sous {
+      a:hover {
+        border-bottom: none;
+        background-color: RGBa(200, 200, 200, 0.1);
+      }
+      a {
+        padding: 10px;
+        border-bottom: none;
+      }
+      li {
+        float: none;
+        width: 100%;
+        text-align: left;
+      }
+      display: none;
+      background-color: $color-lightblue;
+      position: absolute;
+      height: 375px;
+      z-index: 1000;
+    }
+    .loupe::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding: 10px 0px;
+    }
+    .loupe {
       background: url("/assets/logo/Search.svg") left / contain no-repeat;
       padding-left: 2em;
       height: 1.2em;
+      li:hover .sous {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 30px;
+      }
       li {
         font-size: 0.7em;
-        padding: 0 1em;
+        padding: 1em;
+
         a:hover {
           color: $color-darkblue;
         }
@@ -153,7 +204,7 @@ header {
     }
   }
 
-  header ul {
+  header .loupe {
     flex-direction: row;
     justify-content: right;
     position: unset;
@@ -168,12 +219,12 @@ header {
     nav {
       align-items: center;
       padding: 30px 0;
-      ul {
+      .loupe {
         background: initial;
         li {
-          display: block;
-          padding: 0 1em;
           font-size: 0.8rem;
+          display: flex;
+          justify-content: center;
         }
       }
     }
