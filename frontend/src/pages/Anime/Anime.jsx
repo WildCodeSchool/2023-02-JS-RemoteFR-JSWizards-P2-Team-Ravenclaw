@@ -38,22 +38,27 @@ export default function Anime() {
       </div>
     );
   }
+
+  let imgSrc = anime.trailer.images.large_image_url;
+  if (!anime.trailer.images.large_image_url) {
+    imgSrc = "/assets/coming-soon.png";
+  }
   return (
     <div className="anime">
-      <img
-        className="main-image"
-        src={anime.trailer.images.large_image_url}
-        alt={anime.title}
-      />
+      <img className="main-image" src={imgSrc} alt={anime.title} />
       <div className="anime-desc">
         <h2>{anime.title}</h2>
-        <p>{anime.synopsis}</p>
+        <p>{anime.synopsis ? `${anime.synopsis}` : "Absence de synopsis"}</p>
       </div>
-      <iframe
-        src={anime.trailer.embed_url}
-        title={anime.title}
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      />
+      {anime.trailer.embed_url ? (
+        <iframe
+          src={anime.trailer.embed_url}
+          title={anime.title}
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        />
+      ) : (
+        ""
+      )}
       <div className="episode-main">
         {episodes.map((episode) => (
           <Episode key={episode.mal_id} episode={episode} />

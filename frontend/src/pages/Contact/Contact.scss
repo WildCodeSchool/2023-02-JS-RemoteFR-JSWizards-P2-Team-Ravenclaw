@@ -1,25 +1,29 @@
 @import "../../App.scss";
 
 .contact-form {
-  min-height: calc(100vh - 250px);
+  min-height: $hauteur-min;
   margin: 0 auto;
-  width: 600px;
+  width: clamp(200px, 100vw, 720px);
   padding-top: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: $font-family-bold;
   font-size: 20px;
-  color: red;
+  color: $color-lightred;
   button {
-    background-color: rgb(231, 14, 14);
+    background-color: $color-lightred;
+    color: $color-darkblue;
+    font-family: $font-family-bold;
     font-size: 20px;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
   }
   input {
-    width: 600px;
+    width: 100%;
     margin: 1em 0;
   }
   textarea {
     margin: 1em 0;
     height: 300px;
-    width: 600px;
+    width: 100%;
     padding: 10px 30px;
     background-color: $color-lightblue;
     border: 1px solid rgb(111, 110, 110);

@@ -11,7 +11,10 @@ export default function NavBar() {
     burger.classList.toggle("open");
     ul.classList.toggle("open");
   };
-
+  const handleClickCategorie = () => {
+    const ul = document.querySelector(".sous");
+    ul.classList.toggle("active");
+  };
   function onChange(e) {
     setRecherche(e.target.value);
   }
@@ -22,6 +25,27 @@ export default function NavBar() {
     e.preventDefault(); /** Evite le rechargement de la page */
     navigate(`/search/${recherche}`);
   }
+
+  const [largeur, setLargeur] = useState(window.top.innerWidth);
+
+  function handle() {
+    const ul = document.querySelector(".sous");
+    const burger = document.querySelector("#burger");
+    const loupe = document.querySelector(".loupe");
+    setLargeur(window.top.innerWidth);
+
+    if (largeur >= 768 && ul.classList.contains("active")) {
+      ul.classList.toggle("active");
+    }
+
+    if (largeur >= 768 && burger.classList.contains("open")) {
+      burger.classList.toggle("open");
+      loupe.classList.toggle("open");
+    }
+
+    return largeur;
+  }
+  window.onresize = handle;
 
   return (
     <header>
@@ -58,7 +82,17 @@ export default function NavBar() {
         </button>
         <ul className="loupe">
           <li className="deroulant">
-            Categorie
+            {largeur < 768 ? (
+              <button
+                type="button"
+                id="cat-button"
+                onClick={handleClickCategorie}
+              >
+                Categorie
+              </button>
+            ) : (
+              "Categorie"
+            )}
             <ul className="sous">
               <li>
                 <Link to="/aventure">Adventure</Link>
@@ -85,6 +119,9 @@ export default function NavBar() {
           </li>
           <li>
             <Link to="/favoris">Les mieux notes</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
