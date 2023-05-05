@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CarrouselItem from "./CarrouselItem";
 import "./Carrousel.scss";
 
@@ -7,31 +8,37 @@ const items = [
     id: 1,
     name: "Demon Slayer",
     imageSrc: "./assets/images-carrousel/demon-slayer.webp",
+    url: "/anime/55116",
   },
   {
     id: 2,
     name: "Dr. Stone",
     imageSrc: "./assets/images-carrousel/dr-stone.webp",
+    url: "/anime/38691",
   },
   {
     id: 3,
     name: "Suzume",
     imageSrc: "./assets/images-carrousel/suzume.webp",
+    url: "/anime/50594",
   },
   {
     id: 4,
-    name: "Bofuri",
-    imageSrc: "./assets/images-carrousel/bofuri.webp",
+    name: "Mashle",
+    imageSrc: "./assets/images-carrousel/mashle.webp",
+    url: "/anime/52211",
   },
   {
     id: 5,
     name: "Skip & Loafer",
     imageSrc: "./assets/images-carrousel/skip-loafer.webp",
+    url: "/anime/50416",
   },
   {
     id: 6,
     name: "Cheat Skill",
     imageSrc: "./assets/images-carrousel/cheat-skill.webp",
+    url: "/anime/52830",
   },
 ];
 
@@ -74,11 +81,13 @@ function Carrousel() {
         style={{ transform: `translateX(-${activeItem * 100}%)` }}
       >
         {items.map((item) => (
-          <CarrouselItem
-            key={item.id}
-            imageSrc={item.imageSrc}
-            name={item.name}
-          />
+          <Link to={item.url} key={item.id}>
+            <CarrouselItem
+              key={item.id}
+              imageSrc={item.imageSrc}
+              name={item.name}
+            />
+          </Link>
         ))}
       </div>
       <div className="carrousel-nav">
