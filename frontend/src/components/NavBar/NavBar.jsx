@@ -51,7 +51,7 @@ export default function NavBar() {
     <header>
       <a href="/">
         <img
-          src="/assets/logo/logo-AlloAnime-desktop.svg"
+          src="/assets/logo/logo-AlloAnime-desktop.png"
           alt="logo AlloAnime"
           width="350"
           height="60"
