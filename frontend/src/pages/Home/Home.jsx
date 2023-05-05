@@ -90,7 +90,10 @@ export default function Home() {
         <div className="adc-categorie">
           <div className="x2-categorie">
             <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
-            <Categorie animes={animesDrama} titreCategorie="Special Rouquin" />
+            <Categorie
+              animes={animesDrama}
+              titreCategorie="Sélection du Rouquin"
+            />
           </div>
           <AnimeDetailedCard anime={randomAnime2} />
         </div>
