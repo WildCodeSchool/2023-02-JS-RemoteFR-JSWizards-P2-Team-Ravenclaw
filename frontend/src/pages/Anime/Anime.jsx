@@ -21,14 +21,20 @@ export default function Anime() {
         setAnime(response.data.data);
         setLoading(true);
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {
+        setLoading(true);
+        console.error(e);
+      });
     axios
       .get(APIEpisodes)
       .then((response) => {
         setEpisodes(response.data.data);
         setLoading2(true);
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {
+        setLoading2(true);
+        console.error(e);
+      });
   }, []);
 
   if (!loading || !loading2) {
