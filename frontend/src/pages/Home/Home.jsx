@@ -92,7 +92,7 @@ export default function Home() {
             <Categorie animes={animesSciFi} titreCategorie="Sci-Fi" />
             <Categorie
               animes={animesDrama}
-              titreCategorie="Sélection du Rouquin"
+              titreCategorie="Selection du Rouquin"
             />
           </div>
           <AnimeDetailedCard anime={randomAnime2} />
